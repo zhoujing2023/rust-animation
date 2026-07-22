@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene2_key_appears",
+      "targetTime": 1.2
+    },
+    {
+      "name": "scene2_owner_relation",
+      "targetTime": 2.6
+    },
+    {
+      "name": "scene2_controls_vehicle",
+      "targetTime": 4.2
+    },
+    {
+      "name": "scene2_one_owner",
+      "targetTime": 6.1
+    },
+    {
+      "name": "scene2_end",
+      "targetTime": 9
+    }
+  ],
+  "seed": 167432
+}
