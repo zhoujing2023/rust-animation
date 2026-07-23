@@ -104,7 +104,7 @@ export default makeScene2D(function* (view) {
             <Circle size={14} fill={GREEN} />
             <Txt
               marginLeft={16}
-              text={"main.rs · Move"}
+              text={"main.rs · Borrow"}
               fill={MUTED}
               fontFamily={"JetBrains Mono, monospace"}
               fontSize={25}

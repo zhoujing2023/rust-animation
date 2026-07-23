@@ -73,6 +73,7 @@ export default makeScene2D(function* (view) {
   const pageTransition = createRef<Rect>();
   const ampersand = createRef<Layout>();
   const codeLink = createRef<Line>();
+  const codeTitle = createRef<Txt>();
 
   view.add(
     <>
@@ -199,20 +200,16 @@ export default makeScene2D(function* (view) {
           <Txt text={"唯一的数据对象"} fill={MUTED} fontSize={27} />
         </Layout>
       </Rect>
-      <Rect
+      <Txt
         ref={releaseScope}
-        x={0}
-        y={400}
-        width={245}
-        height={62}
-        radius={16}
-        stroke={RED}
-        lineWidth={3}
+        text={"已释放"}
+        fill={TEXT}
+        y={200}
+        fontWeight={800}
+        fontSize={100}
         opacity={0}
         scale={0}
-      >
-        <Txt text={"已被释放"} fill={TEXT} fontWeight={800} fontSize={33} />
-      </Rect>
+      />
 
       <Rect
         ref={leftScope}
@@ -320,6 +317,7 @@ export default makeScene2D(function* (view) {
 
       <Rect
         ref={codeCard}
+        layout
         y={-380}
         width={940}
         height={265}
@@ -330,16 +328,31 @@ export default makeScene2D(function* (view) {
         padding={38}
         opacity={0}
       >
-        <Code
-          ref={code}
-          highlighter={rustHighlighter}
-          code={moveCode}
-          fontFamily={"JetBrains Mono, monospace"}
-          fontSize={31}
-          lineHeight={68}
-          fill={TEXT}
-          selection={lines(0)}
-        />
+        <Layout layout direction={"column"} gap={22} size={"100%"}>
+          <Layout layout alignItems={"center"} gap={12}>
+            <Circle size={14} fill={RED} />
+            <Circle size={14} fill={"#FFC857"} />
+            <Circle size={14} fill={GREEN} />
+            <Txt
+              ref={codeTitle}
+              marginLeft={16}
+              text={"main.rs · Move"}
+              fill={MUTED}
+              fontFamily={"JetBrains Mono, monospace"}
+              fontSize={25}
+            />
+          </Layout>
+          <Code
+            ref={code}
+            highlighter={rustHighlighter}
+            code={moveCode}
+            fontFamily={"JetBrains Mono, monospace"}
+            fontSize={31}
+            lineHeight={68}
+            fill={TEXT}
+            selection={lines(0)}
+          />
+        </Layout>
       </Rect>
 
       {/* There is only one formal key during Move and Borrow. */}
@@ -497,8 +510,8 @@ export default makeScene2D(function* (view) {
 
       <Rect
         ref={ampersand}
-        x={-50}
-        y={-200}
+        x={-68}
+        y={-175}
         size={70}
         radius={16}
         fill={BLUE}
@@ -517,8 +530,8 @@ export default makeScene2D(function* (view) {
       <Line
         ref={codeLink}
         points={[
-          [-50, -250],
-          [-50, -340],
+          [-68, -220],
+          [-68, -310],
         ]}
         stroke={BLUE}
         lineWidth={8}
@@ -587,7 +600,7 @@ export default makeScene2D(function* (view) {
   );
 
   yield* all(
-    releaseScope().opacity(1, 0.3),
+    releaseScope().opacity(0.7, 0.3),
     releaseScope().scale(1, 0.3, easeOutBack),
   );
 
@@ -667,7 +680,11 @@ export default makeScene2D(function* (view) {
   rightOwner().stroke(BLUE).lineDash([18, 14]).end(0);
   xiaoming().opacity(1);
   moved().opacity(0);
-  yield* all(code().selection(lines(0), 0.35), explanation().opacity(0, 0.3));
+  yield* all(
+    code().selection(lines(0), 0.35),
+    explanation().opacity(0, 0.3),
+    codeTitle().text("main.rs · Borrow", 0.3),
+  );
   yield* pageTransition().opacity(0, 0.2);
   yield* waitUntil("scene9_page_wait_finsh");
 

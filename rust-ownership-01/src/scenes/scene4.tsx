@@ -287,7 +287,7 @@ export default makeScene2D(function* (view) {
         y={-50}
         scale={0}
       >
-        <Circle size={145} stroke={RED} lineWidth={18} fill={"#0B1020DD"} />
+        <Circle size={145} stroke={RED} lineWidth={18} />
         <Line
           points={[
             [-48, -48],
