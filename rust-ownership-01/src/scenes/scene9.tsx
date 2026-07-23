@@ -662,7 +662,7 @@ export default makeScene2D(function* (view) {
   yield* waitUntil("scene9_page_wait");
 
   // 在遮罩后重置 Move 状态，观众不会看到元素瞬间复位。
-  yield* key().x(-310);
+  key().x(-310);
   leftOwner().stroke(YELLOW).end(1);
   rightOwner().stroke(BLUE).lineDash([18, 14]).end(0);
   xiaoming().opacity(1);
