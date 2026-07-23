@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene7_show_comparison",
+      "targetTime": 0.32506523589853553
+    },
+    {
+      "name": "scene7_move",
+      "targetTime": 0.904723322802611
+    },
+    {
+      "name": "scene7_borrow",
+      "targetTime": 2.604723322802611
+    },
+    {
+      "name": "scene7_summary",
+      "targetTime": 4.204723322802611
+    },
+    {
+      "name": "scene7_end",
+      "targetTime": 5.904723322802611
+    }
+  ],
+  "seed": 720061
+}

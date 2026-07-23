@@ -9,7 +9,13 @@ import {
   lines,
   makeScene2D,
 } from "@motion-canvas/2d";
-import { all, createRef, easeOutBack, waitUntil } from "@motion-canvas/core";
+import {
+  all,
+  createRef,
+  easeOutBack,
+  waitFor,
+  waitUntil,
+} from "@motion-canvas/core";
 import { HighlightStyle } from "@codemirror/language";
 import { tags } from "@lezer/highlight";
 import { parser } from "@lezer/rust";
@@ -236,11 +242,11 @@ export default makeScene2D(function* (view) {
           padding={[9, 20]}
           opacity={0}
           scale={0.8}
-          width={160}
-          height={40}
+          width={120}
+          height={50}
         >
           <Txt
-            text={"moved ×"}
+            text={"失效"}
             fill={"#B7BECD"}
             fontFamily={"JetBrains Mono, monospace"}
             fontWeight={700}
@@ -270,7 +276,7 @@ export default makeScene2D(function* (view) {
         <Txt
           text={"从这一刻开始，xiaoming_key 失效"}
           fill={TEXT}
-          fontSize={31}
+          fontSize={33}
         />
       </Layout>
 
@@ -312,8 +318,9 @@ export default makeScene2D(function* (view) {
     newLink().end(1, 0.65),
     movedBadge().opacity(1, 0.35),
     movedBadge().scale(1, 0.45, easeOutBack),
-    forbidden().scale(0.8, 0.6, easeOutBack),
   );
+  yield* waitFor(0.3);
+  yield* forbidden().scale(0.8, 0.6, easeOutBack);
 
   yield* waitUntil("scene4_move_named");
   yield* all(

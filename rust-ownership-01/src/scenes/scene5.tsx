@@ -36,7 +36,6 @@ export default makeScene2D(function* (view) {
     <>
       <Layout ref={prompt} layout direction={'column'} alignItems={'center'} y={-700} gap={14} opacity={0}>
         <Txt text={'如果只是临时用一下呢？'} fill={TEXT} fontWeight={800} fontSize={58} />
-        <Txt text={'先把正式钥匙交回所有者'} fill={MUTED} fontSize={30} />
       </Layout>
 
       <Layout x={-300} y={-230} scale={0.9}>
@@ -75,7 +74,7 @@ export default makeScene2D(function* (view) {
         <Rect ref={borrowChoice} width={880} height={150} radius={28} fill={'#172B45'} stroke={BLUE} lineWidth={4}>
           <Layout layout alignItems={'center'} padding={[0, 42]} gap={28}>
             <Txt text={'临时使用'} fill={TEXT} fontWeight={700} fontSize={39} />
-            <Txt text={'?'} fill={BLUE} fontFamily={'JetBrains Mono, monospace'} fontWeight={900} fontSize={54} />
+            <Txt text={'&'} fill={BLUE} fontFamily={'JetBrains Mono, monospace'} fontWeight={900} fontSize={54} />
           </Layout>
         </Rect>
       </Layout>

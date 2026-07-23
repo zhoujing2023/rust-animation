@@ -15,7 +15,6 @@ import { parser } from "@lezer/rust";
 import {
   all,
   createRef,
-  easeInOutCubic,
   easeOutBack,
   waitUntil,
 } from "@motion-canvas/core";

@@ -1,0 +1,30 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene8_show_types",
+      "targetTime": 0.762695472471707
+    },
+    {
+      "name": "scene8_copy",
+      "targetTime": 1.262695472471707
+    },
+    {
+      "name": "scene8_move_show",
+      "targetTime": 1.762695472471707
+    },
+    {
+      "name": "scene8_move",
+      "targetTime": 2.262695472471707
+    },
+    {
+      "name": "scene8_ending",
+      "targetTime": 4.216006764596222
+    },
+    {
+      "name": "scene8_end",
+      "targetTime": 6.126883103936567
+    }
+  ],
+  "seed": 1061155210
+}
