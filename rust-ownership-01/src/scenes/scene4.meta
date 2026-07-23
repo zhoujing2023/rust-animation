@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene4_initial_owner",
+      "targetTime": 1.2
+    },
+    {
+      "name": "scene4_execute_assignment",
+      "targetTime": 3.1
+    },
+    {
+      "name": "scene4_switch_ownership",
+      "targetTime": 3.5274200306389765
+    },
+    {
+      "name": "scene4_move_named",
+      "targetTime": 5.490836640838748
+    },
+    {
+      "name": "scene4_end",
+      "targetTime": 8.290836640838748
+    }
+  ],
+  "seed": 167434
+}

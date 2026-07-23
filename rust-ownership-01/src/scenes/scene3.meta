@@ -1,0 +1,34 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene3_hide_scene2_superfluous",
+      "targetTime": 0
+    },
+    {
+      "name": "scene3_scooter_key_moves",
+      "targetTime": 0.3
+    },
+    {
+      "name": "scene3_zhangsan_enters",
+      "targetTime": 0.8
+    },
+    {
+      "name": "scene3_key_moves",
+      "targetTime": 1.1
+    },
+    {
+      "name": "scene3_new_owner",
+      "targetTime": 2.1
+    },
+    {
+      "name": "scene3_xiaoming_tries",
+      "targetTime": 2.784098298939169
+    },
+    {
+      "name": "scene3_end",
+      "targetTime": 5.720706458225661
+    }
+  ],
+  "seed": 167433
+}

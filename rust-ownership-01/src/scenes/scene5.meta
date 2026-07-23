@@ -1,0 +1,22 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene5_return_key",
+      "targetTime": 0.9
+    },
+    {
+      "name": "scene5_show_choices",
+      "targetTime": 1.647639465406298
+    },
+    {
+      "name": "scene5_choose_temporary",
+      "targetTime": 2.747639465406298
+    },
+    {
+      "name": "scene5_end",
+      "targetTime": 4.547639465406298
+    }
+  ],
+  "seed": 523805
+}

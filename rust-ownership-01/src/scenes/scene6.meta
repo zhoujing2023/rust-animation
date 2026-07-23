@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene6_first_print",
+      "targetTime": 0.8207506278778647
+    },
+    {
+      "name": "scene6_owner_link",
+      "targetTime": 1.351712892848284
+    },
+    {
+      "name": "scene6_insert_code",
+      "targetTime": 2.1810064481258933
+    },
+    {
+      "name": "scene6_line_show_success",
+      "targetTime": 2.9153859786470147
+    },
+    {
+      "name": "scene6_end",
+      "targetTime": 6.135326322084987
+    }
+  ],
+  "seed": 612054
+}

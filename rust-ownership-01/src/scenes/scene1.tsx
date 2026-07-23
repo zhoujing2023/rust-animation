@@ -1,6 +1,7 @@
 import {
   Code,
   Layout,
+  LezerHighlighter,
   Line,
   Rect,
   Txt,
@@ -12,8 +13,12 @@ import {
   chain,
   createRef,
   easeOutBack,
+  waitFor,
   waitUntil,
 } from "@motion-canvas/core";
+import { HighlightStyle } from "@codemirror/language";
+import { parser } from "@lezer/rust";
+import { tags } from "@lezer/highlight";
 
 const BG = "#0B1020";
 const PANEL = "#151C31";
@@ -25,10 +30,50 @@ const BLUE = "#55A7FF";
 export default makeScene2D(function* (view) {
   view.fill(BG);
 
-  const code_card = createRef<Rect>();
+  const codeCard = createRef<Rect>();
   const code = createRef<Code>();
   const underline = createRef<Line>();
   const error = createRef<Rect>();
+
+  const rustHighlighter = new LezerHighlighter(
+    parser,
+    HighlightStyle.define([
+      {
+        tag: tags.keyword,
+        color: "#C792EA",
+      },
+      {
+        tag: tags.function(tags.variableName),
+        color: "#82AAFF",
+      },
+      {
+        // 宏，如 `println!`
+        tag: tags.macroName,
+        color: "#89DDFF",
+      },
+      {
+        tag: tags.string,
+        color: "#C3E88D",
+      },
+      {
+        tag: tags.number,
+        color: "#F78C6C",
+      },
+      {
+        tag: tags.typeName,
+        color: "#FFCB6B",
+      },
+      {
+        tag: tags.variableName,
+        color: "#E8ECF6",
+      },
+      {
+        tag: tags.comment,
+        color: "#697098",
+        fontStyle: "italic",
+      },
+    ]),
+  );
 
   view.add(
     <>
@@ -61,7 +106,7 @@ export default makeScene2D(function* (view) {
 
       <Rect
         key="code_rect"
-        ref={code_card}
+        ref={codeCard}
         layout
         y={210}
         width={950}
@@ -97,6 +142,7 @@ export default makeScene2D(function* (view) {
           </Layout>
           <Code
             ref={code}
+            highlighter={rustHighlighter}
             code={`let xiaoming_key = String::from("电动车钥匙");\nlet zhangsan_key = xiaoming_key;\n\nprintln!("{}", xiaoming_key);`}
             fontFamily={"JetBrains Mono, monospace"}
             fontSize={32}
@@ -163,9 +209,9 @@ export default makeScene2D(function* (view) {
     </>,
   );
 
-  code_card().y(520);
+  codeCard().y(520);
 
-  yield* all(code_card().opacity(1, 0.45), code_card().y(0, 0.8, easeOutBack));
+  yield* all(codeCard().opacity(1, 0.45), codeCard().y(0, 0.8, easeOutBack));
 
   yield* waitUntil("scene1_create_key");
   yield* code().selection(lines(0), 0.3);
@@ -174,16 +220,15 @@ export default makeScene2D(function* (view) {
   yield* code().selection(lines(1), 0.35);
 
   yield* waitUntil("scene1_use_moved_value");
-  yield* all(
-    code().selection(lines(3), 0.3),
-    underline().opacity(1).end(1, 0.4),
-  );
+  yield* code().selection(lines(3), 0.3);
+  yield* waitFor(0.4);
+  yield* underline().opacity(1).end(1, 0.4);
   yield* chain(
-    code_card().x(-14, 0.07),
-    code_card().x(14, 0.07),
-    code_card().x(-9, 0.07),
-    code_card().x(9, 0.07),
-    code_card().x(0, 0.07),
+    codeCard().x(-14, 0.07),
+    codeCard().x(14, 0.07),
+    codeCard().x(-9, 0.07),
+    codeCard().x(9, 0.07),
+    codeCard().x(0, 0.07),
   );
   yield* all(error().opacity(1, 0.25), error().scale(1, 0.4, easeOutBack));
 
