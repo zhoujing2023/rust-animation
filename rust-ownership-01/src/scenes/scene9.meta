@@ -3,47 +3,63 @@
   "timeEvents": [
     {
       "name": "scene9_multiple_owners",
-      "targetTime": 1.2
+      "targetTime": 4.960009097938075
     },
     {
       "name": "scene9_first_scope_exit",
-      "targetTime": 3
+      "targetTime": 8.234528530830097
+    },
+    {
+      "name": "scene9_first_show_circle_exit",
+      "targetTime": 9.034605321963033
+    },
+    {
+      "name": "scene9_first_show_circle_moved_exit",
+      "targetTime": 9.71005732116203
     },
     {
       "name": "scene9_second_scope_exit",
-      "targetTime": 6.1785007204531555
+      "targetTime": 12.527064643413329
+    },
+    {
+      "name": "scene9_second_show_circle_exit",
+      "targetTime": 13.056862488942038
+    },
+    {
+      "name": "scene9_second_show_circle_moved_exit",
+      "targetTime": 13.988742275607667
     },
     {
       "name": "scene9_compiler_rewind",
-      "targetTime": 8.378500720453154
+      "targetTime": 15.718284608515656
     },
     {
       "name": "scene9_move",
-      "targetTime": 9.178500720453155
+      "targetTime": 16.518284608515657
     },
     {
       "name": "scene9_key_move",
-      "targetTime": 11.281112395046815
+      "targetTime": 19.73214073341662
     },
     {
       "name": "scene9_borrow",
-      "targetTime": 15.031112395046815
+      "targetTime": 26.319762749385855
     },
     {
       "name": "scene9_page_wait",
-      "targetTime": 17.73012695289931
+      "targetTime": 27.147811872665095
     },
     {
       "name": "scene9_page_wait_finsh",
-      "targetTime": 18.867343920392152
+      "targetTime": 28.285028840157935
     },
     {
       "name": "scene9_summary",
-      "targetTime": 25.02662906835376
+      "targetTime": 33.48160068601911
     },
     {
       "name": "scene9_end",
-      "targetTime": 28.22662906835376
+      "targetTime": 39.37166734368712
     }
   ],
   "seed": 920020

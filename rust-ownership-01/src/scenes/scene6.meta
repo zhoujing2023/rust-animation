@@ -7,19 +7,23 @@
     },
     {
       "name": "scene6_owner_link",
-      "targetTime": 1.351712892848284
+      "targetTime": 3.5574418225169557
     },
     {
       "name": "scene6_insert_code",
-      "targetTime": 2.6243637628303684
+      "targetTime": 4.83009269249904
     },
     {
-      "name": "scene6_line_show_success",
-      "targetTime": 3.8755368059411106
+      "name": "scene6_zhangsan_show_success",
+      "targetTime": 6.286384211209322
+    },
+    {
+      "name": "scene6_xiaoming_show_success",
+      "targetTime": 11.844653988746899
     },
     {
       "name": "scene6_end",
-      "targetTime": 7.095477149379083
+      "targetTime": 15.662980534463493
     }
   ],
   "seed": 612054

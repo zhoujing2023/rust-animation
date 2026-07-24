@@ -312,15 +312,17 @@ export default makeScene2D(function* (view) {
 
   yield* waitUntil("scene4_switch_ownership");
   yield* oldLink().end(0, 0.4);
+  yield* all(zhangsanCard().opacity(1, 0.45), newLink().end(1, 0.65));
+
+  yield* waitUntil("scene4_xiaoming_opacity");
+  yield* xiaomingCard().opacity(0.35, 0.5);
+
+  yield* waitUntil("scene4_forbidden_show");
   yield* all(
-    xiaomingCard().opacity(0.35, 0.5),
-    zhangsanCard().opacity(1, 0.45),
-    newLink().end(1, 0.65),
+    forbidden().scale(0.8, 0.6, easeOutBack),
     movedBadge().opacity(1, 0.35),
     movedBadge().scale(1, 0.45, easeOutBack),
   );
-  yield* waitFor(0.3);
-  yield* forbidden().scale(0.8, 0.6, easeOutBack);
 
   yield* waitUntil("scene4_move_named");
   yield* all(

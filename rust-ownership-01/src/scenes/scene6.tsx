@@ -12,12 +12,7 @@ import {
 import { HighlightStyle } from "@codemirror/language";
 import { tags } from "@lezer/highlight";
 import { parser } from "@lezer/rust";
-import {
-  all,
-  createRef,
-  easeOutBack,
-  waitUntil,
-} from "@motion-canvas/core";
+import { all, createRef, easeOutBack, waitUntil } from "@motion-canvas/core";
 
 const BG = "#0B1020";
 const PANEL = "#151C31";
@@ -155,11 +150,11 @@ export default makeScene2D(function* (view) {
         lineDash={[20, 15]}
       />
 
-      <Layout ref={firstSuccess} x={400} y={-180} opacity={0} scale={0.5}>
+      <Layout ref={firstSuccess} x={400} y={-180} opacity={0} scale={0.2}>
         <Circle size={44} fill={GREEN} />
         <Txt text={"✓"} fill={BG} fontWeight={900} fontSize={30} />
       </Layout>
-      <Layout ref={secondSuccess} x={400} y={-120} opacity={0} scale={0.5}>
+      <Layout ref={secondSuccess} x={400} y={-120} opacity={0} scale={0.2}>
         <Circle size={44} fill={GREEN} />
         <Txt text={"✓"} fill={BG} fontWeight={900} fontSize={30} />
       </Layout>
@@ -177,11 +172,17 @@ export default makeScene2D(function* (view) {
   yield* ownerLink().opacity(0, 0.2);
   yield* code().code(borrowCode, 0.3);
 
-  yield* waitUntil("scene6_line_show_success");
-  yield* code().selection(lines(3, 4), 0.35);
+  yield* waitUntil("scene6_zhangsan_show_success");
+  yield* code().selection(lines(3), 0.35);
   yield* all(
     firstSuccess().opacity(1, 0.25),
     firstSuccess().scale(1, 0.4, easeOutBack),
+  );
+
+  yield* waitUntil("scene6_xiaoming_show_success");
+  yield* code().selection(lines(4), 0.35);
+  yield* all(
+    firstSuccess().opacity(0.5, 0.25),
     secondSuccess().opacity(1, 0.25),
     secondSuccess().scale(1, 0.4, easeOutBack),
   );

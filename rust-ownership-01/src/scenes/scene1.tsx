@@ -1,7 +1,6 @@
 import {
   Code,
   Layout,
-  LezerHighlighter,
   Line,
   Rect,
   Txt,
@@ -16,14 +15,10 @@ import {
   waitFor,
   waitUntil,
 } from "@motion-canvas/core";
-import { HighlightStyle } from "@codemirror/language";
-import { parser } from "@lezer/rust";
-import { tags } from "@lezer/highlight";
+import { CodeRect } from "../components/CodeRect";
 
 const BG = "#0B1020";
-const PANEL = "#151C31";
 const TEXT = "#E8ECF6";
-const MUTED = "#8E9AB5";
 const RED = "#FF5C68";
 const BLUE = "#55A7FF";
 
@@ -34,46 +29,6 @@ export default makeScene2D(function* (view) {
   const code = createRef<Code>();
   const underline = createRef<Line>();
   const error = createRef<Rect>();
-
-  const rustHighlighter = new LezerHighlighter(
-    parser,
-    HighlightStyle.define([
-      {
-        tag: tags.keyword,
-        color: "#C792EA",
-      },
-      {
-        tag: tags.function(tags.variableName),
-        color: "#82AAFF",
-      },
-      {
-        // 宏，如 `println!`
-        tag: tags.macroName,
-        color: "#89DDFF",
-      },
-      {
-        tag: tags.string,
-        color: "#C3E88D",
-      },
-      {
-        tag: tags.number,
-        color: "#F78C6C",
-      },
-      {
-        tag: tags.typeName,
-        color: "#FFCB6B",
-      },
-      {
-        tag: tags.variableName,
-        color: "#E8ECF6",
-      },
-      {
-        tag: tags.comment,
-        color: "#697098",
-        fontStyle: "italic",
-      },
-    ]),
-  );
 
   view.add(
     <>
@@ -104,54 +59,13 @@ export default makeScene2D(function* (view) {
         />
       </Layout>
 
-      <Rect
-        key="code_rect"
-        ref={codeCard}
-        layout
-        y={210}
-        width={950}
-        height={680}
-        radius={34}
-        fill={PANEL}
-        stroke={"#293451"}
-        lineWidth={3}
-        shadowColor={"#00000066"}
-        shadowBlur={35}
-        padding={48}
-        opacity={0}
-      >
-        <Layout
-          key="code_layout"
-          layout
-          direction={"column"}
-          width={"100%"}
-          height={"100%"}
-          gap={42}
-        >
-          <Layout layout alignItems={"center"} gap={16}>
-            <Rect size={16} radius={8} fill={RED} />
-            <Rect size={16} radius={8} fill={"#FFC857"} />
-            <Rect size={16} radius={8} fill={"#50D890"} />
-            <Txt
-              marginLeft={18}
-              text={"main.rs"}
-              fill={MUTED}
-              fontFamily={"JetBrains Mono, monospace"}
-              fontSize={25}
-            />
-          </Layout>
-          <Code
-            ref={code}
-            highlighter={rustHighlighter}
-            code={`let xiaoming_key = String::from("电动车钥匙");\nlet zhangsan_key = xiaoming_key;\n\nprintln!("{}", xiaoming_key);`}
-            fontFamily={"JetBrains Mono, monospace"}
-            fontSize={32}
-            lineHeight={58}
-            fill={TEXT}
-            selection={lines(0)}
-          />
-        </Layout>
-      </Rect>
+      <CodeRect
+        rectRef={codeCard}
+        rectPositionY={210}
+        codeRef={code}
+        code={`let xiaoming_key = String::from("电动车钥匙");\nlet zhangsan_key = xiaoming_key;\n\nprintln!("{}", xiaoming_key);`}
+        selection={lines(0)}
+      />
 
       <Line
         ref={underline}
@@ -211,6 +125,8 @@ export default makeScene2D(function* (view) {
 
   codeCard().y(520);
 
+
+  
   yield* all(codeCard().opacity(1, 0.45), codeCard().y(0, 0.8, easeOutBack));
 
   yield* waitUntil("scene1_create_key");
@@ -234,3 +150,4 @@ export default makeScene2D(function* (view) {
 
   yield* waitUntil("scene1_end");
 });
+

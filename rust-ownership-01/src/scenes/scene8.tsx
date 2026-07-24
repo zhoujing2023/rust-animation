@@ -108,7 +108,7 @@ export default makeScene2D(function* (view) {
         />
       </Layout>
 
-      <Layout ref={person} x={-35} y={-40} scale={1} opacity={0}>
+      <Layout key="confuse_figure_layout" ref={person} x={-35} y={-40} scale={1} opacity={0}>
         <ConfusedPerson color={BLUE} />
       </Layout>
       <Txt

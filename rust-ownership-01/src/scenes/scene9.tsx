@@ -75,6 +75,9 @@ export default makeScene2D(function* (view) {
   const codeLink = createRef<Line>();
   const codeTitle = createRef<Txt>();
 
+  const leftReleaseCircle = createRef<Circle>();
+  const rightReleaseCircle = createRef<Circle>();
+
   view.add(
     <>
       <Txt
@@ -124,6 +127,7 @@ export default makeScene2D(function* (view) {
           fontSize={38}
         />
       </Rect>
+
       <Rect
         ref={zhangsan}
         x={315}
@@ -151,7 +155,7 @@ export default makeScene2D(function* (view) {
           [-270, -175],
           [-100, 40],
         ]}
-        stroke={RED}
+        stroke={YELLOW}
         lineWidth={9}
         endArrow
         arrowSize={23}
@@ -163,7 +167,7 @@ export default makeScene2D(function* (view) {
           [270, -175],
           [100, 40],
         ]}
-        stroke={RED}
+        stroke={YELLOW}
         lineWidth={9}
         endArrow
         arrowSize={23}
@@ -576,6 +580,22 @@ export default makeScene2D(function* (view) {
           />
         </Layout>
       </Rect>
+
+      <Circle
+        ref={leftReleaseCircle}
+        size={40}
+        fill={BLUE}
+        position={[-270, -180]}
+        opacity={0}
+      ></Circle>
+
+      <Circle
+        ref={rightReleaseCircle}
+        size={40}
+        fill={RED}
+        position={[270, -180]}
+        opacity={0}
+      ></Circle>
     </>,
   );
 
@@ -592,11 +612,15 @@ export default makeScene2D(function* (view) {
 
   yield* waitUntil("scene9_first_scope_exit");
   // 第二阶段
-  yield* leftScope().opacity(1, 0.25);
+  yield* all(leftScope().opacity(1, 0.25), leftReleaseCircle().opacity(1, 0.2));
+  yield* waitUntil("scene9_first_show_circle_exit");
+  yield* leftReleaseCircle().position([-85, 65], 0.5);
+  yield* waitUntil("scene9_first_show_circle_moved_exit");
   yield* all(
     xiaoming().opacity(0.18, 0.4),
     leftOwner().opacity(0.15, 0.4),
     data().opacity(0.18, 0.55),
+    leftReleaseCircle().opacity(0, 0.2),
   );
 
   yield* all(
@@ -605,7 +629,14 @@ export default makeScene2D(function* (view) {
   );
 
   yield* waitUntil("scene9_second_scope_exit");
-  yield* rightScope().opacity(1, 0.25);
+  yield* all(
+    rightScope().opacity(1, 0.25),
+    rightReleaseCircle().opacity(1, 0.2),
+  );
+  yield* waitUntil("scene9_second_show_circle_exit");
+  yield* rightReleaseCircle().position([85, 65], 0.5);
+  yield* waitUntil("scene9_second_show_circle_moved_exit");
+
   yield* all(
     releaseScope().opacity(0, 0.3),
     releaseScope().scale(0, 0.3, easeOutBack),
@@ -615,6 +646,7 @@ export default makeScene2D(function* (view) {
     doubleFree().scale(1, 0.45, easeOutBack),
     forbidden().opacity(1, 0.3),
     forbidden().scale(1, 0.3, easeOutBack),
+    rightReleaseCircle().opacity(0, 0.2),
   );
 
   yield* waitUntil("scene9_compiler_rewind");

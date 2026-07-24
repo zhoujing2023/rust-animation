@@ -3,23 +3,31 @@
   "timeEvents": [
     {
       "name": "scene4_initial_owner",
-      "targetTime": 1.2
+      "targetTime": 1.0474209857285666
     },
     {
       "name": "scene4_execute_assignment",
-      "targetTime": 3.1
+      "targetTime": 1.631720981840967
     },
     {
       "name": "scene4_switch_ownership",
-      "targetTime": 3.5274200306389765
+      "targetTime": 4.8411491694756705
+    },
+    {
+      "name": "scene4_xiaoming_opacity",
+      "targetTime": 5.891149169475671
+    },
+    {
+      "name": "scene4_forbidden_show",
+      "targetTime": 6.391149169475671
     },
     {
       "name": "scene4_move_named",
-      "targetTime": 5.490836640838748
+      "targetTime": 9.573796835394118
     },
     {
       "name": "scene4_end",
-      "targetTime": 8.290836640838748
+      "targetTime": 13.427172141031186
     }
   ],
   "seed": 167434

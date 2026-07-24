@@ -10,6 +10,7 @@ import scene7 from "./scenes/scene7?scene";
 import scene8 from "./scenes/scene8?scene";
 import scene9 from "./scenes/scene9?scene";
 import scene10 from "./scenes/scene10?scene";
+import audioMp3 from "../audio/audio.mp3";
 
 export default makeProject({
   scenes: [
@@ -24,4 +25,5 @@ export default makeProject({
     scene9,
     scene10,
   ],
+  audio: audioMp3,
 });

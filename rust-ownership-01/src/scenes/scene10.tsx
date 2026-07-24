@@ -232,8 +232,8 @@ export default makeScene2D(function* (view) {
         layout
         direction={"column"}
         alignItems={"center"}
-        y={610}
-        gap={50}
+        y={0}
+        gap={80}
         opacity={0}
         scale={0.9}
       >

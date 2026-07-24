@@ -1,5 +1,14 @@
-import {Circle, Layout, Line, Rect, Txt, makeScene2D} from '@motion-canvas/2d';
-import {all, createRef, easeOutBack, waitUntil} from '@motion-canvas/core';
+import {Layout, Line, Rect, Txt, makeScene2D} from '@motion-canvas/2d';
+import {
+  all,
+  createRef,
+  createSignal,
+  easeOutBack,
+  waitUntil,
+} from '@motion-canvas/core';
+import {FigureLayout} from '../components/FigureLayout';
+import {KeyLayout} from '../components/KeyLayout';
+import {VehicleLayout} from '../components/VehicleLayout';
 
 const BG = '#0B1020';
 const TEXT = '#E8ECF6';
@@ -12,7 +21,9 @@ export default makeScene2D(function* (view) {
 
   const owner = createRef<Layout>();
   const scooter = createRef<Layout>();
-  const key = createRef<Layout>();
+  const figureSize = createSignal(0.85);
+  const keySize = createSignal(0);
+  const vehicleSize = createSignal(0.85);
   const ownerLink = createRef<Line>();
   const controlLink = createRef<Line>();
   const title = createRef<Txt>();
@@ -57,32 +68,11 @@ export default makeScene2D(function* (view) {
       />
       <Txt text={'控制'} x={130} y={-80} fill={YELLOW} fontSize={32} opacity={() => controlLink().end()} />
 
-      <Layout key='figure_layout' ref={owner} x={-400} y={-30} scale={0.85} opacity={0}>
-        <Circle y={-135} size={110} fill={BLUE} />
-        <Line points={[[0, -75], [0, 100]]} stroke={BLUE} lineWidth={36} lineCap={'round'} />
-        <Line points={[[-75, -5], [0, -50], [75, -5]]} stroke={BLUE} lineWidth={28} lineCap={'round'} />
-        <Line points={[[-60, 195], [0, 95], [60, 195]]} stroke={BLUE} lineWidth={30} lineCap={'round'} />
-        <Txt text={'小明'} y={275} fill={TEXT} fontWeight={700} fontSize={50} />
-        <Txt text={'所有者'} y={330} fill={BLUE} fontSize={32} />
-      </Layout>
+      <FigureLayout layoutRef={owner} size={figureSize} />
 
-      <Layout key='key_layout' ref={key} y={-10} scale={0}>
-        <Circle x={-60} size={70} stroke={YELLOW} lineWidth={18} />
-        <Line points={[[-15, 0], [95, 0]]} stroke={YELLOW} lineWidth={24} lineCap={'round'} />
-        <Line points={[[20, 0], [20, 35]]} stroke={YELLOW} lineWidth={18} />
-        <Line points={[[60, 0], [60, 28]]} stroke={YELLOW} lineWidth={18} />
-        <Txt text={'唯一的钥匙'} y={125} fill={YELLOW} fontWeight={700} fontSize={40} />
-      </Layout>
+      <KeyLayout size={keySize} />
 
-      <Layout key='vehicle_layout' ref={scooter} x={420} y={-40} scale={0.85} opacity={0}>
-        <Circle x={-90} y={115} size={105} stroke={MUTED} lineWidth={22} />
-        <Circle x={115} y={115} size={105} stroke={MUTED} lineWidth={22} />
-        <Line points={[[-80, 95], [-20, 10], [105, 95], [-35, 95]]} stroke={MUTED} lineWidth={28} lineJoin={'round'} />
-        <Line points={[[75, 70], [55, -75], [110, -75]]} stroke={MUTED} lineWidth={25} lineCap={'round'} />
-        <Rect x={-55} y={-5} width={135} height={40} radius={25} fill={BLUE} />
-        <Txt text={'电动车'} y={255} fill={TEXT} fontWeight={700} fontSize={50} />
-        <Txt text={'数据'} y={310} fill={MUTED} fontSize={32} />
-      </Layout>
+      <VehicleLayout layoutRef={scooter} size={vehicleSize} />
 
       <Rect
         ref={summary}
@@ -124,7 +114,7 @@ export default makeScene2D(function* (view) {
   );
 
   yield* waitUntil('scene2_key_appears');
-  yield* key().scale(0.85, 0.65, easeOutBack);
+  yield* keySize(0.85, 0.65, easeOutBack);
 
   yield* waitUntil('scene2_owner_relation');
   yield* all(ownerLink().end(1, 0.55), title().opacity(1, 0.45));
