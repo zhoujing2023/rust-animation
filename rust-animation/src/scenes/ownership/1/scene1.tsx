@@ -16,6 +16,8 @@ import {
   waitUntil,
 } from "@motion-canvas/core";
 import { CodeRect } from "../../../components/CodeRect";
+import { ErrorMsgRect } from "../../../components/ErrorMsgRect";
+import { UnderlineLine } from "../../../components/UnderlineLine";
 
 const BG = "#0B1020";
 const TEXT = "#E8ECF6";
@@ -67,66 +69,19 @@ export default makeScene2D(function* (view) {
         selection={lines(0)}
       />
 
-      <Line
-        ref={underline}
-        points={[
-          [-290, 0],
-          [-260, 10],
-          [-230, 0],
-          [-200, 10],
-          [-170, 0],
-          [-140, 10],
-          [-110, 0],
-          [-80, 10],
-          [-50, 0],
-          [-20, 10],
-          [10, 0],
-        ]}
-        x={130}
-        y={20}
-        stroke={RED}
-        lineWidth={6}
-        lineCap={"round"}
-        end={0}
-        opacity={0}
-      />
+      <UnderlineLine ref={underline} length={9} x={153} y={10}></UnderlineLine>
 
-      <Rect
+      <ErrorMsgRect
         ref={error}
         y={170}
-        width={900}
-        height={150}
-        radius={24}
-        fill={"#351B29"}
-        stroke={RED}
-        lineWidth={3}
-        padding={[28, 34]}
-        opacity={0}
-        scale={0.9}
-      >
-        <Layout layout direction={"column"} gap={10}>
-          <Txt
-            text={"COMPILER ERROR"}
-            fill={RED}
-            fontFamily={"JetBrains Mono, monospace"}
-            fontWeight={700}
-            fontSize={24}
-          />
-          <Txt
-            text={"borrow of moved value: `xiaoming_key`"}
-            fill={TEXT}
-            fontFamily={"JetBrains Mono, monospace"}
-            fontSize={29}
-          />
-        </Layout>
-      </Rect>
+        errMsg="COMPILER ERROR"
+        errContent="borrow of moved value: `xiaoming_key`"
+      ></ErrorMsgRect>
     </>,
   );
 
   codeCard().y(520);
 
-
-  
   yield* all(codeCard().opacity(1, 0.45), codeCard().y(0, 0.8, easeOutBack));
 
   yield* waitUntil("scene1_create_key");
@@ -150,4 +105,3 @@ export default makeScene2D(function* (view) {
 
   yield* waitUntil("scene1_end");
 });
-

@@ -19,6 +19,9 @@ import {
 import { HighlightStyle } from "@codemirror/language";
 import { tags } from "@lezer/highlight";
 import { parser } from "@lezer/rust";
+import { DataRect1 } from "../../../components/DataRect1";
+import { DataRect2 } from "../../../components/DataRect2";
+import { TitleLayout } from "../../../components/TitleLayout";
 
 const BG = "#0B1020";
 const PANEL = "#151C31";
@@ -55,27 +58,11 @@ export default makeScene2D(function* (view) {
 
   view.add(
     <>
-      <Layout
-        key={"scene4_heading"}
-        layout
-        direction={"column"}
-        alignItems={"center"}
+      <TitleLayout
+        title={["代码里发生了什么？", 54, TEXT, 800]}
         y={-690}
-        gap={10}
-      >
-        <Txt
-          text={"代码里发生了什么？"}
-          fill={TEXT}
-          fontWeight={800}
-          fontSize={54}
-        />
-        <Txt
-          text={"变量名变化，数据不复制"}
-          fill={MUTED}
-          fontFamily={"JetBrains Mono, monospace"}
-          fontSize={27}
-        />
-      </Layout>
+        subtitle={["变量名变化，数据不复制", 27, MUTED]}
+      ></TitleLayout>
 
       <Rect
         key={"scene4_code_card"}
@@ -130,26 +117,20 @@ export default makeScene2D(function* (view) {
           fontSize={30}
         />
 
-        <Rect
-          key={"scene4_xiaoming_variable"}
+        <DataRect2
+          key="xiaoming_rect_2"
           ref={xiaomingCard}
           x={-285}
           y={80}
           width={390}
           height={150}
           radius={24}
-          fill={"#172B45"}
+          fill="#172B45"
           stroke={BLUE}
           lineWidth={4}
-        >
-          <Txt
-            text={"xiaoming_key"}
-            fill={BLUE}
-            fontFamily={"JetBrains Mono, monospace"}
-            fontWeight={700}
-            fontSize={36}
-          />
-        </Rect>
+          label={["xiaoming_key", 36, BLUE]}
+          opacity={1}
+        ></DataRect2>
 
         <Line
           key={"scene4_xiaoming_data_link"}
@@ -165,58 +146,37 @@ export default makeScene2D(function* (view) {
           end={0}
         />
 
-        {/* This data box never moves or duplicates during the ownership switch. */}
-        <Rect
-          key={"scene4_single_data_box"}
+        <DataRect1
           x={300}
           y={270}
           width={410}
           height={280}
           radius={30}
-          fill={"#332E16"}
+          fill="#332E16"
           stroke={YELLOW}
           lineWidth={5}
           shadowColor={"#FFD44733"}
           shadowBlur={30}
-        >
-          <Layout layout direction={"column"} alignItems={"center"} gap={20}>
-            <Txt
-              text={"String"}
-              fill={YELLOW}
-              fontFamily={"JetBrains Mono, monospace"}
-              fontSize={32}
-            />
-            <Txt
-              text={"“电动车钥匙”"}
-              fill={TEXT}
-              fontWeight={700}
-              fontSize={40}
-            />
-            <Txt text={"同一份数据"} fill={MUTED} fontSize={27} />
-          </Layout>
-        </Rect>
+          label1={["String", 32, YELLOW]}
+          label2={["“电动车钥匙”", 40, TEXT]}
+          label3={["同一份数据", 27, MUTED]}
+          opacity={1}
+        ></DataRect1>
 
-        <Rect
-          key={"scene4_zhangsan_variable"}
+        <DataRect2
+          key="zhangsan_rect_2"
           ref={zhangsanCard}
           x={-285}
           y={400}
           width={390}
           height={150}
           radius={24}
-          fill={"#3A1C29"}
+          fill="#3A1C29"
           stroke={RED}
           lineWidth={4}
+          label={["xiaoming_key", 36, RED]}
           opacity={0}
-        >
-          <Txt
-            text={"zhangsan_key"}
-            fill={RED}
-            fontFamily={"JetBrains Mono, monospace"}
-            fontWeight={700}
-            fontSize={36}
-          />
-        </Rect>
+        ></DataRect2>
 
         <Line
           key={"scene4_zhangsan_data_link"}

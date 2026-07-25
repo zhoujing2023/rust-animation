@@ -6,11 +6,13 @@ const PANEL = "#151C31";
 
 export interface CodeRectProps {
   // Rect 组件
+  key?: string;
   rectRef?: ReferenceReceiver<Rect>;
   rectWidth?: number;
   rectHeight?: number;
   rectPositionX?: number;
   rectPositionY?: number;
+  rectOpacity?: number;
   // Code 组件
   code: CodeProps["code"];
   codeRef?: ReferenceReceiver<Code>;
@@ -24,11 +26,13 @@ export interface CodeRectProps {
  * @returns Rect 组件
  */
 export function CodeRect({
+  key = "code_rect",
   rectRef,
   rectWidth = 950,
   rectHeight = 680,
   rectPositionX = 0,
   rectPositionY = 0,
+  rectOpacity = 0,
   code,
   codeRef,
   filename,
@@ -36,7 +40,7 @@ export function CodeRect({
 }: CodeRectProps) {
   return (
     <Rect
-      key="code_rect"
+      key={key}
       ref={rectRef}
       layout
       x={rectPositionX}
@@ -50,7 +54,7 @@ export function CodeRect({
       shadowColor={"#00000066"}
       shadowBlur={35}
       padding={48}
-      opacity={0}
+      opacity={rectOpacity}
     >
       <CodeLayout
         code={code}

@@ -13,6 +13,7 @@ import {
   easeOutBack,
   waitUntil,
 } from "@motion-canvas/core";
+import { ForbiddenLayout } from "../../../components/ForbiddenLayout";
 
 const BG = "#0B1020";
 const TEXT = "#E8ECF6";
@@ -303,31 +304,7 @@ export default makeScene2D(function* (view) {
         </Layout>
       </Rect>
 
-      <Layout
-        key={"scene3_forbidden"}
-        ref={forbidden}
-        x={140}
-        y={500}
-        scale={0}
-      >
-        <Circle size={145} stroke={RED} lineWidth={18} fill={"#0B1020DD"} />
-        <Line
-          points={[
-            [-48, -48],
-            [48, 48],
-          ]}
-          stroke={RED}
-          lineWidth={18}
-          lineCap={"round"}
-        />
-        <Txt
-          text={"不能再使用"}
-          y={120}
-          fill={RED}
-          fontWeight={700}
-          fontSize={32}
-        />
-      </Layout>
+      <ForbiddenLayout ref={forbidden} x={140} y={500}></ForbiddenLayout>
     </Layout>,
   );
 

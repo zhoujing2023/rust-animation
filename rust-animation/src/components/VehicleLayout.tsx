@@ -1,31 +1,40 @@
-import {Circle, Layout, Line, Rect, Txt} from '@motion-canvas/2d';
-import {ReferenceReceiver, SimpleSignal} from '@motion-canvas/core';
+import { Circle, Layout, Line, Rect, Txt } from "@motion-canvas/2d";
+import { ReferenceReceiver, SimpleSignal } from "@motion-canvas/core";
 
-const TEXT = '#E8ECF6';
-const MUTED = '#94A0BA';
-const BLUE = '#55A7FF';
+const TEXT = "#E8ECF6";
+const MUTED = "#94A0BA";
+const BLUE = "#55A7FF";
 
 export interface VehicleLayoutProps {
+  key?: string;
   layoutRef?: ReferenceReceiver<Layout>;
   size: SimpleSignal<number>;
+  x?: number;
+  y?: number;
+  label1: string;
+  label2: string;
+  opacity?: number;
 }
 
 /**
  * 自行车标识
  * @param 参数
- * @returns 
+ * @returns
  */
-export function VehicleLayout({layoutRef, size}: VehicleLayoutProps) {
+export function VehicleLayout({
+  key = "vehicle_layout",
+  layoutRef,
+  size,
+  x = 0,
+  y = 0,
+  label1,
+  label2,
+  opacity = 0,
+}: VehicleLayoutProps) {
   const scaled = (value: number) => () => value * size();
 
   return (
-    <Layout
-      key={'vehicle_layout'}
-      ref={layoutRef}
-      x={420}
-      y={-40}
-      opacity={0}
-    >
+    <Layout key={key} ref={layoutRef} x={x} y={y} opacity={opacity}>
       <Circle
         x={scaled(-90)}
         y={scaled(115)}
@@ -49,7 +58,7 @@ export function VehicleLayout({layoutRef, size}: VehicleLayoutProps) {
         ]}
         stroke={MUTED}
         lineWidth={scaled(28)}
-        lineJoin={'round'}
+        lineJoin={"round"}
       />
       <Line
         points={() => [
@@ -59,7 +68,7 @@ export function VehicleLayout({layoutRef, size}: VehicleLayoutProps) {
         ]}
         stroke={MUTED}
         lineWidth={scaled(25)}
-        lineCap={'round'}
+        lineCap={"round"}
       />
       <Rect
         x={scaled(-55)}
@@ -70,18 +79,13 @@ export function VehicleLayout({layoutRef, size}: VehicleLayoutProps) {
         fill={BLUE}
       />
       <Txt
-        text={'电动车'}
+        text={label1}
         y={scaled(255)}
         fill={TEXT}
         fontWeight={700}
         fontSize={scaled(50)}
       />
-      <Txt
-        text={'数据'}
-        y={scaled(310)}
-        fill={MUTED}
-        fontSize={scaled(32)}
-      />
+      <Txt text={label2} y={scaled(310)} fill={MUTED} fontSize={scaled(32)} />
     </Layout>
   );
 }

@@ -1,20 +1,21 @@
-import {Layout, Line, Rect, Txt, makeScene2D} from '@motion-canvas/2d';
+import { Layout, Line, Rect, Txt, makeScene2D } from "@motion-canvas/2d";
 import {
   all,
   createRef,
   createSignal,
   easeOutBack,
   waitUntil,
-} from '@motion-canvas/core';
-import {FigureLayout} from '../../../components/FigureLayout';
-import {KeyLayout} from '../../../components/KeyLayout';
-import {VehicleLayout} from '../../../components/VehicleLayout';
+} from "@motion-canvas/core";
+import { DefaultPictogramLayout } from "../../../components/DefaultPictogramLayout";
+import { KeyLayout } from "../../../components/KeyLayout";
+import { VehicleLayout } from "../../../components/VehicleLayout";
+import { SolidLine } from "../../../components/SolidLine";
 
-const BG = '#0B1020';
-const TEXT = '#E8ECF6';
-const MUTED = '#94A0BA';
-const BLUE = '#55A7FF';
-const YELLOW = '#FFD447';
+const BG = "#0B1020";
+const TEXT = "#E8ECF6";
+const MUTED = "#94A0BA";
+const BLUE = "#55A7FF";
+const YELLOW = "#FFD447";
 
 export default makeScene2D(function* (view) {
   view.fill(BG);
@@ -30,35 +31,42 @@ export default makeScene2D(function* (view) {
   const summary = createRef<Rect>();
 
   view.add(
-    <Layout
-    y={-200}
-    >
+    <Layout y={-200}>
       <Txt
         ref={title}
         y={-350}
-        text={'Owner'}
+        text={"Owner"}
         fill={YELLOW}
-        fontFamily={'JetBrains Mono, monospace'}
+        fontFamily={"JetBrains Mono, monospace"}
         fontWeight={800}
         fontSize={76}
         opacity={0}
       />
 
-      <Line
+      <SolidLine
         ref={ownerLink}
-        points={[[-220, 0], [-95, 0]]}
+        points={[
+          [-220, 0],
+          [-95, 0],
+        ]}
         y={-10}
-        stroke={BLUE}
-        lineWidth={10}
-        endArrow
-        arrowSize={24}
-        end={0}
+      ></SolidLine>
+
+      <Txt
+        text={"持有"}
+        x={-160}
+        y={-80}
+        fill={BLUE}
+        fontSize={32}
+        opacity={() => ownerLink().end()}
       />
-      <Txt text={'持有'} x={-160} y={-80} fill={BLUE} fontSize={32} opacity={() => ownerLink().end()} />
 
       <Line
         ref={controlLink}
-        points={[[100, 0], [200, 0]]}
+        points={[
+          [100, 0],
+          [200, 0],
+        ]}
         y={-10}
         stroke={YELLOW}
         lineWidth={10}
@@ -66,13 +74,35 @@ export default makeScene2D(function* (view) {
         arrowSize={24}
         end={0}
       />
-      <Txt text={'控制'} x={130} y={-80} fill={YELLOW} fontSize={32} opacity={() => controlLink().end()} />
 
-      <FigureLayout layoutRef={owner} size={figureSize} />
+      <Txt
+        text={"控制"}
+        x={130}
+        y={-80}
+        fill={YELLOW}
+        fontSize={32}
+        opacity={() => controlLink().end()}
+      />
 
-      <KeyLayout size={keySize} />
+      <DefaultPictogramLayout
+        layoutRef={owner}
+        size={figureSize}
+        x={-400}
+        y={-30}
+        label1="小明"
+        label2="所有者"
+      />
 
-      <VehicleLayout layoutRef={scooter} size={vehicleSize} />
+      <KeyLayout size={keySize} y={-10} label="唯一钥匙" opacity={1} />
+
+      <VehicleLayout
+        layoutRef={scooter}
+        size={vehicleSize}
+        x={420}
+        y={-40}
+        label1="电动车"
+        label2="数据"
+      />
 
       <Rect
         ref={summary}
@@ -80,22 +110,22 @@ export default makeScene2D(function* (view) {
         width={910}
         height={180}
         radius={30}
-        fill={'#151C31'}
-        stroke={'#2A3552'}
+        fill={"#151C31"}
+        stroke={"#2A3552"}
         lineWidth={3}
         padding={[34, 40]}
         opacity={0}
         scale={0.94}
       >
-        <Layout layout direction={'column'} alignItems={'center'} gap={14}>
+        <Layout layout direction={"column"} alignItems={"center"} gap={14}>
           <Txt
-            text={'一份数据，一个所有者'}
+            text={"一份数据，一个所有者"}
             fill={TEXT}
             fontWeight={800}
             fontSize={48}
           />
           <Txt
-            text={'谁拿着钥匙，谁就能使用这辆车'}
+            text={"谁拿着钥匙，谁就能使用这辆车"}
             fill={MUTED}
             fontSize={29}
           />
@@ -113,17 +143,17 @@ export default makeScene2D(function* (view) {
     scooter().x(290, 0.8, easeOutBack),
   );
 
-  yield* waitUntil('scene2_key_appears');
+  yield* waitUntil("scene2_key_appears");
   yield* keySize(0.85, 0.65, easeOutBack);
 
-  yield* waitUntil('scene2_owner_relation');
+  yield* waitUntil("scene2_owner_relation");
   yield* all(ownerLink().end(1, 0.55), title().opacity(1, 0.45));
 
-  yield* waitUntil('scene2_controls_vehicle');
+  yield* waitUntil("scene2_controls_vehicle");
   yield* controlLink().end(1, 0.55);
 
-  yield* waitUntil('scene2_one_owner');
+  yield* waitUntil("scene2_one_owner");
   yield* all(summary().opacity(1, 0.35), summary().scale(1, 0.5, easeOutBack));
 
-  yield* waitUntil('scene2_end');
+  yield* waitUntil("scene2_end");
 });

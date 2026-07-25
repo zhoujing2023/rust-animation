@@ -13,6 +13,7 @@ import { HighlightStyle } from "@codemirror/language";
 import { tags } from "@lezer/highlight";
 import { parser } from "@lezer/rust";
 import { all, createRef, easeOutBack, waitUntil } from "@motion-canvas/core";
+import { SuccessLayout } from "../../../components/SuccessLayout";
 
 const BG = "#0B1020";
 const PANEL = "#151C31";
@@ -149,15 +150,22 @@ export default makeScene2D(function* (view) {
         end={0}
         lineDash={[20, 15]}
       />
-
-      <Layout ref={firstSuccess} x={400} y={-180} opacity={0} scale={0.2}>
-        <Circle size={44} fill={GREEN} />
-        <Txt text={"✓"} fill={BG} fontWeight={900} fontSize={30} />
-      </Layout>
-      <Layout ref={secondSuccess} x={400} y={-120} opacity={0} scale={0.2}>
-        <Circle size={44} fill={GREEN} />
-        <Txt text={"✓"} fill={BG} fontWeight={900} fontSize={30} />
-      </Layout>
+      <SuccessLayout
+        key="first_success_layout"
+        ref={firstSuccess}
+        x={400}
+        y={-180}
+        opacity={0}
+        scale={0.2}
+      ></SuccessLayout>
+      <SuccessLayout
+        key="second_success_layout"
+        ref={secondSuccess}
+        x={400}
+        y={-120}
+        opacity={0}
+        scale={0.2}
+      ></SuccessLayout>
     </Layout>,
   );
 
