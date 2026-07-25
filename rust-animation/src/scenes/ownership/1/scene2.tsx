@@ -6,9 +6,9 @@ import {
   easeOutBack,
   waitUntil,
 } from '@motion-canvas/core';
-import {FigureLayout} from '../components/FigureLayout';
-import {KeyLayout} from '../components/KeyLayout';
-import {VehicleLayout} from '../components/VehicleLayout';
+import {FigureLayout} from '../../../components/FigureLayout';
+import {KeyLayout} from '../../../components/KeyLayout';
+import {VehicleLayout} from '../../../components/VehicleLayout';
 
 const BG = '#0B1020';
 const TEXT = '#E8ECF6';

@@ -15,7 +15,7 @@ import {
   waitFor,
   waitUntil,
 } from "@motion-canvas/core";
-import { CodeRect } from "../components/CodeRect";
+import { CodeRect } from "../../../components/CodeRect";
 
 const BG = "#0B1020";
 const TEXT = "#E8ECF6";
