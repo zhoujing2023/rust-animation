@@ -4,7 +4,11 @@ import ffmpeg from '@motion-canvas/ffmpeg';
 
 export default defineConfig({
   plugins: [
-    motionCanvas(),
+    motionCanvas({
+      project:[
+        "./src/ownership-1.ts"
+      ]
+    }),
     ffmpeg(),
   ],
 });

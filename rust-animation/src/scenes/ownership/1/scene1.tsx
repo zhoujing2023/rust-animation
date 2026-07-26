@@ -1,5 +1,6 @@
 import {
   Code,
+  Img,
   Layout,
   Line,
   Rect,
@@ -18,6 +19,7 @@ import {
 import { CodeRect } from "../../../components/CodeRect";
 import { ErrorMsgRect } from "../../../components/ErrorMsgRect";
 import { UnderlineLine } from "../../../components/UnderlineLine";
+import { FerrisImg } from "../../../components/FerrisImg";
 
 const BG = "#0B1020";
 const TEXT = "#E8ECF6";
@@ -31,6 +33,7 @@ export default makeScene2D(function* (view) {
   const code = createRef<Code>();
   const underline = createRef<Line>();
   const error = createRef<Rect>();
+  const ferrisImg = createRef<Img>();
 
   view.add(
     <>

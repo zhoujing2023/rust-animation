@@ -130,7 +130,7 @@ export default makeScene2D(function* (view) {
           lineWidth={4}
           label={["xiaoming_key", 36, BLUE]}
           opacity={1}
-        ></DataRect2>
+        />
 
         <Line
           key={"scene4_xiaoming_data_link"}
@@ -161,7 +161,7 @@ export default makeScene2D(function* (view) {
           label2={["“电动车钥匙”", 40, TEXT]}
           label3={["同一份数据", 27, MUTED]}
           opacity={1}
-        ></DataRect1>
+        />
 
         <DataRect2
           key="zhangsan_rect_2"
@@ -176,8 +176,7 @@ export default makeScene2D(function* (view) {
           lineWidth={4}
           label={["xiaoming_key", 36, RED]}
           opacity={0}
-        ></DataRect2>
-
+        />
         <Line
           key={"scene4_zhangsan_data_link"}
           ref={newLink}
