@@ -1,8 +1,6 @@
 import { Circle, Layout, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const BG = "#0B1020";
-const RED = "#FF5C68";
+import { COLORS } from "../constants";
 
 export interface ErrorLayoutProps {
   key?: string;
@@ -18,10 +16,10 @@ export interface ErrorLayoutProps {
 /**
  * 异常标识
  * @param 参数
- * @returns 
+ * @returns
  */
 export function ErrorLayout({
-  key = "error_layout",
+  key,
   ref,
   x = 0,
   y = 0,
@@ -32,8 +30,14 @@ export function ErrorLayout({
 }: ErrorLayoutProps) {
   return (
     <Layout key={key} ref={ref} x={x} y={y} opacity={opacity} scale={scale}>
-      <Circle size={size} fill={RED} />
-      <Txt text={"X"} fill={BG} fontWeight={900} fontSize={fontSize} />
+      <Circle size={size} fill={COLORS.red} />
+      <Txt
+        text={"×"}
+        fill={COLORS.bg}
+        fontWeight={900}
+        fontSize={fontSize}
+        fontFamily={"JetBrains Mono, monospace"}
+      />
     </Layout>
   );
 }

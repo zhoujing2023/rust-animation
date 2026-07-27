@@ -1,7 +1,6 @@
 import { Line } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const BLUE = "#55A7FF";
+import { COLORS } from "../constants";
 
 export interface SolidLineProps {
   key?: string;
@@ -11,24 +10,24 @@ export interface SolidLineProps {
   points: [number, number][];
   lineWidth?: number;
   arrowSize?: number;
-  color?: string;
+  stroke?: string;
   end?: number;
 }
 
 /**
- * 实线箭头
+ * 带箭头的实线
  * @param 参数
  * @returns
  */
 export function SolidLine({
-  key = "link_line",
+  key,
   ref,
   x = 0,
   y = 0,
   points,
   lineWidth = 10,
   arrowSize = 24,
-  color = BLUE,
+  stroke = COLORS.blue,
   end = 0,
 }: SolidLineProps) {
   return (
@@ -38,7 +37,7 @@ export function SolidLine({
       points={points}
       x={x}
       y={y}
-      stroke={color}
+      stroke={stroke}
       lineWidth={lineWidth}
       endArrow
       arrowSize={arrowSize}

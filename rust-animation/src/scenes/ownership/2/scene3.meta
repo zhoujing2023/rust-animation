@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene3_first_reader",
+      "targetTime": 1.1169990143607793
+    },
+    {
+      "name": "scene3_more_readers",
+      "targetTime": 5.234454083534413
+    },
+    {
+      "name": "scene3_data_unchanged",
+      "targetTime": 8.334454083534412
+    },
+    {
+      "name": "scene3_shared_reading",
+      "targetTime": 11.534454083534415
+    },
+    {
+      "name": "scene3_end",
+      "targetTime": 18.098985704906035
+    }
+  ],
+  "seed": 698154468
+}

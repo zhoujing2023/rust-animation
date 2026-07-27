@@ -59,7 +59,7 @@ export default makeScene2D(function* (view) {
   view.add(
     <>
       <TitleLayout
-        title={["代码里发生了什么？", 54, TEXT, 800]}
+        title={"代码里发生了什么？"}
         y={-690}
         subtitle={["变量名变化，数据不复制", 27, MUTED]}
       ></TitleLayout>

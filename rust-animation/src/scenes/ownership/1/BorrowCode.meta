@@ -3,28 +3,28 @@
   "timeEvents": [
     {
       "name": "scene6_first_print",
-      "targetTime": 0.8207506278778647
+      "targetTime": 0.45
     },
     {
       "name": "scene6_owner_link",
-      "targetTime": 3.5574418225169557
+      "targetTime": 0.45
     },
     {
       "name": "scene6_insert_code",
-      "targetTime": 4.83009269249904
+      "targetTime": 0.95
     },
     {
       "name": "scene6_zhangsan_show_success",
-      "targetTime": 6.286384211209322
+      "targetTime": 1.45
     },
     {
       "name": "scene6_xiaoming_show_success",
-      "targetTime": 11.844653988746899
+      "targetTime": 2.1999999999999997
     },
     {
       "name": "scene6_end",
-      "targetTime": 15.662980534463493
+      "targetTime": 2.9499999999999997
     }
   ],
-  "seed": 612054
+  "seed": 2923305068
 }

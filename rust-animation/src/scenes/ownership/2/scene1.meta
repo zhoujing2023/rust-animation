@@ -1,0 +1,38 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene1_show_reference_category",
+      "targetTime": 4.1628511217269555
+    },
+    {
+      "name": "scene1_reference_intro",
+      "targetTime": 8.02492871225693
+    },
+    {
+      "name": "scene1_immutable_reference",
+      "targetTime": 8.57492871225693
+    },
+    {
+      "name": "scene1_immutable_reference_println",
+      "targetTime": 10.26240510225484
+    },
+    {
+      "name": "scene1_mutable_reference",
+      "targetTime": 13.132195674120803
+    },
+    {
+      "name": "scene1_mutable_reference_push",
+      "targetTime": 16.58026580192311
+    },
+    {
+      "name": "scene1_reader_editor",
+      "targetTime": 18.794763590125587
+    },
+    {
+      "name": "scene1_end",
+      "targetTime": 23.609442637076697
+    }
+  ],
+  "seed": 698154466
+}

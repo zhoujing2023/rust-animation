@@ -18,12 +18,10 @@ import {
 } from "@motion-canvas/core";
 import { CodeRect } from "../../../components/CodeRect";
 import { ErrorMsgRect } from "../../../components/ErrorMsgRect";
-import { UnderlineLine } from "../../../components/UnderlineLine";
-import { FerrisImg } from "../../../components/FerrisImg";
+import { UnderLine } from "../../../components/UnderLine";
 
 const BG = "#0B1020";
 const TEXT = "#E8ECF6";
-const RED = "#FF5C68";
 const BLUE = "#55A7FF";
 
 export default makeScene2D(function* (view) {
@@ -33,7 +31,6 @@ export default makeScene2D(function* (view) {
   const code = createRef<Code>();
   const underline = createRef<Line>();
   const error = createRef<Rect>();
-  const ferrisImg = createRef<Img>();
 
   view.add(
     <>
@@ -66,13 +63,13 @@ export default makeScene2D(function* (view) {
 
       <CodeRect
         rectRef={codeCard}
-        rectPositionY={210}
+        y={210}
         codeRef={code}
         code={`let xiaoming_key = String::from("电动车钥匙");\nlet zhangsan_key = xiaoming_key;\n\nprintln!("{}", xiaoming_key);`}
         selection={lines(0)}
       />
 
-      <UnderlineLine ref={underline} length={9} x={153} y={10}></UnderlineLine>
+      <UnderLine ref={underline} length={9} x={153} y={10}></UnderLine>
 
       <ErrorMsgRect
         ref={error}

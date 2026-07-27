@@ -1,8 +1,6 @@
 import { Circle, Layout, Line, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver, SimpleSignal } from "@motion-canvas/core";
-
-const TEXT = "#E8ECF6";
-const BLUE = "#55A7FF";
+import { COLORS } from "../constants";
 
 export interface DefaultPictogramLayoutProps {
   key?: string;
@@ -22,14 +20,14 @@ export interface DefaultPictogramLayoutProps {
  * @returns Layout
  */
 export function DefaultPictogramLayout({
-  key = "figure_layout",
+  key,
   layoutRef,
   size,
   x = 0,
   y = 0,
   label1,
   label2,
-  color = BLUE,
+  color = COLORS.blue,
   opacity = 0,
 }: DefaultPictogramLayoutProps) {
   const scaled = (value: number) => () => value * size();

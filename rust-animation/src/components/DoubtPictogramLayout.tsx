@@ -1,9 +1,6 @@
 import { Circle, Layout, Line, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const BG = "#0B1020";
-const BLUE = "#55A7FF";
-const YELLOW = "#FFD447";
+import { COLORS } from "../constants";
 
 export interface DoubtPictogramLayoutProps {
   key?: string;
@@ -20,26 +17,26 @@ export interface DoubtPictogramLayoutProps {
  * @returns
  */
 export function DoubtPictogramLayout({
-  key = "doubt_pictogram_layout",
+  key,
   ref,
   x = 0,
   y = 0,
-  color = BLUE,
+  color = COLORS.blue,
   opacity = 0,
 }: DoubtPictogramLayoutProps) {
   return (
     <Layout key={key} ref={ref} x={x} y={y} scale={1} opacity={opacity}>
       <Layout>
         <Circle y={-115} size={96} fill={color} />
-        <Circle x={-18} y={-125} size={9} fill={BG} />
-        <Circle x={18} y={-125} size={9} fill={BG} />
+        <Circle x={-18} y={-125} size={9} fill={COLORS.bg} />
+        <Circle x={18} y={-125} size={9} fill={COLORS.bg} />
         <Line
           points={[
             [-18, -92],
             [0, -98],
             [18, -92],
           ]}
-          stroke={BG}
+          stroke={COLORS.bg}
           lineWidth={7}
           lineCap={"round"}
         />
@@ -88,7 +85,7 @@ export function DoubtPictogramLayout({
         text={"?"}
         x={140}
         y={-210}
-        fill={YELLOW}
+        fill={COLORS.yellow}
         fontFamily={"JetBrains Mono, monospace"}
         fontWeight={900}
         fontSize={150}

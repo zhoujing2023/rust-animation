@@ -1,7 +1,6 @@
 import { Line } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const BLUE = "#55A7FF";
+import { COLORS } from "../constants";
 
 export interface DottedLineProps {
   key?: string;
@@ -15,15 +14,15 @@ export interface DottedLineProps {
 }
 
 /**
- * 虚线（箭头）
+ * 带箭头的虚线
  * @param 参数
  * @returns 
  */
 export function DottedLine({
-  key = "dotted_line",
+  key,
   ref,
   points,
-  stroke = BLUE,
+  stroke = COLORS.blue,
   lineWidth = 8,
   arrowSize = 22,
   end = 0,

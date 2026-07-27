@@ -1,0 +1,42 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene4_first_editor",
+      "targetTime": 2.5529903057276635
+    },
+    {
+      "name": "scene4_editor_link",
+      "targetTime": 3.656342050674243
+    },
+    {
+      "name": "scene4_second_editor",
+      "targetTime": 8.725776442617978
+    },
+    {
+      "name": "scene4_rejecte_show",
+      "targetTime": 9.175776442617977
+    },
+    {
+      "name": "scene4_exclusive_access",
+      "targetTime": 12.225776442617976
+    },
+    {
+      "name": "scene4_hide_err_info",
+      "targetTime": 17.726128458949567
+    },
+    {
+      "name": "scene4_remove_editer2_code",
+      "targetTime": 19.672366590674567
+    },
+    {
+      "name": "scene4_edit_success",
+      "targetTime": 21.677867295907582
+    },
+    {
+      "name": "scene4_end",
+      "targetTime": 25.091060856433828
+    }
+  ],
+  "seed": 698154469
+}

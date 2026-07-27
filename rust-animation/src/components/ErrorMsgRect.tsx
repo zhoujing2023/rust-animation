@@ -1,10 +1,6 @@
 import { Layout, Rect, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const BG = "#0B1020";
-const TEXT = "#E8ECF6";
-const RED = "#FF5C68";
-const BLUE = "#55A7FF";
+import { COLORS } from "../constants";
 
 export interface ErrorMsgRectProps {
   key?: string;
@@ -24,7 +20,7 @@ export interface ErrorMsgRectProps {
  * @returns 
  */
 export function ErrorMsgRect({
-  key = "error_msg_rect",
+  key,
   ref,
   x = 0,
   y = 0,
@@ -44,7 +40,7 @@ export function ErrorMsgRect({
       height={height}
       radius={24}
       fill={"#351B29"}
-      stroke={RED}
+      stroke={COLORS.red}
       lineWidth={3}
       padding={[28, 34]}
       opacity={opacity}
@@ -53,14 +49,14 @@ export function ErrorMsgRect({
       <Layout layout direction={"column"} gap={10}>
         <Txt
           text={errMsg}
-          fill={RED}
+          fill={COLORS.red}
           fontFamily={"JetBrains Mono, monospace"}
           fontWeight={700}
           fontSize={24}
         />
         <Txt
           text={errContent}
-          fill={TEXT}
+          fill={COLORS.text}
           fontFamily={"JetBrains Mono, monospace"}
           fontSize={29}
         />

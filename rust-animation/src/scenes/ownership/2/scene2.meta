@@ -1,0 +1,38 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene2_ownership_created",
+      "targetTime": 6.757116257201633
+    },
+    {
+      "name": "scene2_reader_created",
+      "targetTime": 11.951702034508607
+    },
+    {
+      "name": "scene2_borrow_efficient",
+      "targetTime": 13.277727539575826
+    },
+    {
+      "name": "scene2_stability_promise",
+      "targetTime": 14.86762943114694
+    },
+    {
+      "name": "scene2_editor_attempt",
+      "targetTime": 17.84550648960249
+    },
+    {
+      "name": "scene2_editor_borrow_update_befor",
+      "targetTime": 22.853607692204974
+    },
+    {
+      "name": "scene2_editor_borrow_updated_after",
+      "targetTime": 27.048072258362396
+    },
+    {
+      "name": "scene2_end",
+      "targetTime": 30.296925478711046
+    }
+  ],
+  "seed": 698154467
+}

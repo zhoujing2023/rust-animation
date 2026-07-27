@@ -1,7 +1,7 @@
 import { Circle, Layout, Line, Txt } from "@motion-canvas/2d";
 import { SimpleSignal } from "@motion-canvas/core";
+import { COLORS } from "../constants";
 
-const YELLOW = "#FFD447";
 
 export interface KeyLayoutProps {
   key?: string;
@@ -19,12 +19,12 @@ export interface KeyLayoutProps {
  * @returns Layout
  */
 export function KeyLayout({
-  key = "key_layout",
+  key,
   size,
   x = 0,
   y = 0,
   label,
-  color = YELLOW,
+  color = COLORS.yellow,
   opacity = 0,
 }: KeyLayoutProps) {
   const scaled = (value: number) => () => value * size();

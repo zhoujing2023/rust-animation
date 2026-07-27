@@ -1,7 +1,6 @@
 import { Layout, Rect, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const BLUE = "#55A7FF";
+import { COLORS } from "../constants";
 
 export interface DataRect1Props {
   key?: string;
@@ -28,7 +27,7 @@ export interface DataRect1Props {
  * @returns
  */
 export function DataRect1({
-  key = "data_rect_1",
+  key,
   ref,
   x = 0,
   y = 0,
@@ -36,7 +35,7 @@ export function DataRect1({
   height = 300,
   radius = 30,
   fill = "#172B45",
-  stroke = BLUE,
+  stroke = COLORS.blue,
   lineWidth = 5,
   shadowColor = "#5178e533",
   shadowBlur = 30,

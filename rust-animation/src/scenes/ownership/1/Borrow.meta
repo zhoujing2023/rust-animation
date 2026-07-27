@@ -3,20 +3,20 @@
   "timeEvents": [
     {
       "name": "scene5_return_key",
-      "targetTime": 0.9
+      "targetTime": 0.45
     },
     {
       "name": "scene5_show_choices",
-      "targetTime": 1.647639465406298
+      "targetTime": 1.05
     },
     {
       "name": "scene5_choose_temporary",
-      "targetTime": 2.747639465406298
+      "targetTime": 1.5
     },
     {
       "name": "scene5_end",
-      "targetTime": 4.725536730455035
+      "targetTime": 2.05
     }
   ],
-  "seed": 523805
+  "seed": 883775638
 }

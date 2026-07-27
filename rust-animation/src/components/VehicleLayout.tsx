@@ -1,9 +1,6 @@
 import { Circle, Layout, Line, Rect, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver, SimpleSignal } from "@motion-canvas/core";
-
-const TEXT = "#E8ECF6";
-const MUTED = "#94A0BA";
-const BLUE = "#55A7FF";
+import { COLORS } from "../constants";
 
 export interface VehicleLayoutProps {
   key?: string;
@@ -22,7 +19,7 @@ export interface VehicleLayoutProps {
  * @returns
  */
 export function VehicleLayout({
-  key = "vehicle_layout",
+  key,
   layoutRef,
   size,
   x = 0,
@@ -39,14 +36,14 @@ export function VehicleLayout({
         x={scaled(-90)}
         y={scaled(115)}
         size={scaled(105)}
-        stroke={MUTED}
+        stroke={COLORS.muted}
         lineWidth={scaled(22)}
       />
       <Circle
         x={scaled(115)}
         y={scaled(115)}
         size={scaled(105)}
-        stroke={MUTED}
+        stroke={COLORS.muted}
         lineWidth={scaled(22)}
       />
       <Line
@@ -56,7 +53,7 @@ export function VehicleLayout({
           [105 * size(), 95 * size()],
           [-35 * size(), 95 * size()],
         ]}
-        stroke={MUTED}
+        stroke={COLORS.muted}
         lineWidth={scaled(28)}
         lineJoin={"round"}
       />
@@ -66,7 +63,7 @@ export function VehicleLayout({
           [55 * size(), -75 * size()],
           [110 * size(), -75 * size()],
         ]}
-        stroke={MUTED}
+        stroke={COLORS.muted}
         lineWidth={scaled(25)}
         lineCap={"round"}
       />
@@ -76,16 +73,21 @@ export function VehicleLayout({
         width={scaled(135)}
         height={scaled(40)}
         radius={scaled(25)}
-        fill={BLUE}
+        fill={COLORS.blue}
       />
       <Txt
         text={label1}
         y={scaled(255)}
-        fill={TEXT}
+        fill={COLORS.text}
         fontWeight={700}
         fontSize={scaled(50)}
       />
-      <Txt text={label2} y={scaled(310)} fill={MUTED} fontSize={scaled(32)} />
+      <Txt
+        text={label2}
+        y={scaled(310)}
+        fill={COLORS.muted}
+        fontSize={scaled(32)}
+      />
     </Layout>
   );
 }

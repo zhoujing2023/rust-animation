@@ -3,32 +3,32 @@
   "timeEvents": [
     {
       "name": "scene4_initial_owner",
-      "targetTime": 1.0474209857285666
+      "targetTime": 0.7
     },
     {
       "name": "scene4_execute_assignment",
-      "targetTime": 1.631720981840967
+      "targetTime": 1.25
     },
     {
       "name": "scene4_switch_ownership",
-      "targetTime": 4.8411491694756705
+      "targetTime": 1.65
     },
     {
       "name": "scene4_xiaoming_opacity",
-      "targetTime": 5.891149169475671
+      "targetTime": 2.6999999999999997
     },
     {
       "name": "scene4_forbidden_show",
-      "targetTime": 6.391149169475671
+      "targetTime": 3.1999999999999997
     },
     {
       "name": "scene4_move_named",
-      "targetTime": 9.573796835394118
+      "targetTime": 3.8
     },
     {
       "name": "scene4_end",
-      "targetTime": 13.427172141031186
+      "targetTime": 4.35
     }
   ],
-  "seed": 167434
+  "seed": 844865054
 }

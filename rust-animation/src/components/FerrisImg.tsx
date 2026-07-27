@@ -25,7 +25,7 @@ export interface FerrisImgProps {
  * @returns
  */
 export function FerrisImg({
-  key = "ferris_img",
+  key,
   ref,
   scale = 0.3,
   x = 0,

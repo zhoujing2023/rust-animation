@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [
     motionCanvas({
       project:[
-        "./src/ownership-1.ts"
+        "./src/ownership-1.ts",
+        "./src/ownership-2.ts",
       ]
     }),
     ffmpeg(),

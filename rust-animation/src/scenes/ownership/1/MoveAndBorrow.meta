@@ -3,24 +3,24 @@
   "timeEvents": [
     {
       "name": "scene7_show_comparison",
-      "targetTime": 0.32506523589853553
+      "targetTime": 0.2
     },
     {
       "name": "scene7_move",
-      "targetTime": 1.8259802519596235
+      "targetTime": 0.7
     },
     {
       "name": "scene7_borrow",
-      "targetTime": 4.138760742076139
+      "targetTime": 1.25
     },
     {
       "name": "scene7_summary",
-      "targetTime": 4.688760742076139
+      "targetTime": 1.8
     },
     {
       "name": "scene7_end",
-      "targetTime": 6.612353869585382
+      "targetTime": 2.2
     }
   ],
-  "seed": 720061
+  "seed": 395910135
 }

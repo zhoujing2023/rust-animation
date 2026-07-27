@@ -1,7 +1,6 @@
 import { Circle, Layout, Line, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const RED = "#fa6767";
+import { COLORS } from "../constants";
 
 export interface ForbiddenLayoutProps {
   key?: string;
@@ -9,7 +8,6 @@ export interface ForbiddenLayoutProps {
   x?: number;
   y?: number;
   size?: number;
-  lineWidth?: number;
   label?: string;
   labelSize?: number;
 }
@@ -17,36 +15,43 @@ export interface ForbiddenLayoutProps {
 /**
  * 禁止标志（不允许）
  * @param 参数
- * @returns 
+ * @returns
  */
 export function ForbiddenLayout({
-  key = "forbidden_layout",
+  key,
   ref,
   x = 0,
   y = 0,
   size = 145,
-  lineWidth = 18,
   label = "不能再使用",
   labelSize = 32,
 }: ForbiddenLayoutProps) {
+  const diagonalOffset = size * (48 / 145);
+  const lineWidth = size * (18 / 145);
   return (
     <Layout key={key} ref={ref} x={x} y={y} scale={0}>
       <Circle
         size={size}
-        stroke={RED}
+        stroke={COLORS.red}
         lineWidth={lineWidth}
         fill={"#0B1020DD"}
       />
       <Line
         points={[
-          [-48, -48],
-          [48, 48],
+          [-diagonalOffset, -diagonalOffset],
+          [diagonalOffset, diagonalOffset],
         ]}
-        stroke={RED}
+        stroke={COLORS.red}
         lineWidth={lineWidth}
         lineCap={"round"}
       />
-      <Txt text={label} y={120} fill={RED} fontWeight={700} fontSize={labelSize} />
+      <Txt
+        text={label}
+        y={size}
+        fill={COLORS.red}
+        fontWeight={700}
+        fontSize={labelSize}
+      />
     </Layout>
   );
 }

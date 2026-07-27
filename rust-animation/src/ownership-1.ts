@@ -1,29 +1,29 @@
 import { makeProject } from "@motion-canvas/core";
 
-import scene1 from "./scenes/ownership/1/scene1?scene";
-import scene2 from "./scenes/ownership/1/scene2?scene";
-import scene3 from "./scenes/ownership/1/scene3?scene";
-import scene4 from "./scenes/ownership/1/scene4?scene";
-import scene5 from "./scenes/ownership/1/scene5?scene";
-import scene6 from "./scenes/ownership/1/scene6?scene";
-import scene7 from "./scenes/ownership/1/scene7?scene";
-import scene8 from "./scenes/ownership/1/scene8?scene";
-import scene9 from "./scenes/ownership/1/scene9?scene";
-import scene10 from "./scenes/ownership/1/scene10?scene";
+import Introduction from "./scenes/ownership/1/Introduction?scene";
+import Ownership from "./scenes/ownership/1/Ownership?scene";
+import OwnershipMove from "./scenes/ownership/1/OwnershipMove?scene";
+import OwnershipMoveCode from "./scenes/ownership/1/OwnershipMoveCode?scene";
+import Borrow from "./scenes/ownership/1/Borrow?scene";
+import BorrowCode from "./scenes/ownership/1/BorrowCode?scene";
+import MoveAndBorrow from "./scenes/ownership/1/MoveAndBorrow?scene";
+import Why from "./scenes/ownership/1/Why?scene";
+import ReasonExplanation from "./scenes/ownership/1/ReasonExplanation?scene";
+import Replenish from "./scenes/ownership/1/Replenish?scene";
 import ownership1Mp3 from "../audio/rust-ownership-1.mp3";
 
 export default makeProject({
   scenes: [
-    scene1,
-    scene2,
-    scene3,
-    scene4,
-    scene5,
-    scene6,
-    scene7,
-    scene8,
-    scene9,
-    scene10,
+    Introduction,
+    Ownership,
+    OwnershipMove,
+    OwnershipMoveCode,
+    Borrow,
+    BorrowCode,
+    MoveAndBorrow,
+    Why,
+    ReasonExplanation,
+    Replenish,
   ],
   audio: ownership1Mp3,
 });

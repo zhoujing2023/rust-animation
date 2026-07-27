@@ -1,20 +1,21 @@
 import { Layout, Txt } from "@motion-canvas/2d";
+import { COLORS } from "../constants";
 
 export interface TitleLayoutProps {
   key?: string;
   x?: number;
   y?: number;
-  title: [string, number, string, number]; // 内容，大小，颜色，粗细
+  title: string;
   subtitle?: [string, number, string];
 }
 
 /**
  * 标题
  * @param 参数
- * @returns 
+ * @returns
  */
 export function TitleLayout({
-  key = "title_layout",
+  key,
   x = 0,
   y = 0,
   title,
@@ -30,12 +31,7 @@ export function TitleLayout({
       y={y}
       gap={10}
     >
-      <Txt
-        text={title[0]}
-        fill={title[2]}
-        fontWeight={title[3]}
-        fontSize={title[1]}
-      />
+      <Txt text={title} fill={COLORS.text} fontWeight={800} fontSize={54} />
       <Txt
         text={subtitle?.[0]}
         fill={subtitle?.[2]}

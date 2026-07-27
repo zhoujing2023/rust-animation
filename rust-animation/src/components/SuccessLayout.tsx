@@ -1,8 +1,6 @@
 import { Circle, Layout, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const BG = "#0B1020";
-const GREEN = "#54D98C";
+import { COLORS } from "../constants";
 
 export interface SuccessLayoutProps {
   key?: string;
@@ -18,10 +16,10 @@ export interface SuccessLayoutProps {
 /**
  * 成功标识
  * @param 参数
- * @returns 
+ * @returns
  */
 export function SuccessLayout({
-  key = "success_layout",
+  key,
   ref,
   x = 0,
   y = 0,
@@ -32,8 +30,14 @@ export function SuccessLayout({
 }: SuccessLayoutProps) {
   return (
     <Layout key={key} ref={ref} x={x} y={y} opacity={opacity} scale={scale}>
-      <Circle size={size} fill={GREEN} />
-      <Txt text={"✓"} fill={BG} fontWeight={900} fontSize={fontSize} />
+      <Circle size={size} fill={COLORS.green} />
+      <Txt
+        text={"✓"}
+        fill={COLORS.bg}
+        fontWeight={900}
+        fontSize={fontSize}
+        fontFamily={"JetBrains Mono, monospace"}
+      />
     </Layout>
   );
 }

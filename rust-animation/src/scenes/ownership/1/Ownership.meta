@@ -3,24 +3,24 @@
   "timeEvents": [
     {
       "name": "scene2_key_appears",
-      "targetTime": 1.2
+      "targetTime": 0.8
     },
     {
       "name": "scene2_owner_relation",
-      "targetTime": 2.6
+      "targetTime": 1.4500000000000002
     },
     {
       "name": "scene2_controls_vehicle",
-      "targetTime": 4.2
+      "targetTime": 2
     },
     {
       "name": "scene2_one_owner",
-      "targetTime": 6.1
+      "targetTime": 2.55
     },
     {
       "name": "scene2_end",
-      "targetTime": 9.113427205931735
+      "targetTime": 3.05
     }
   ],
-  "seed": 167432
+  "seed": 1056807666
 }

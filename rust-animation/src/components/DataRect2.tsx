@@ -1,8 +1,7 @@
 import { Rect, Txt } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
+import { COLORS } from "../constants";
 
-const BLUE = "#55A7FF";
-const MUTED = "#8E9AB5";
 
 export interface DataRect2Props {
   key?: string;
@@ -27,7 +26,7 @@ export interface DataRect2Props {
 /**
  * 数据 Rect2
  * 
- * 失效调用：
+ * 失效动画：
  *  invalidTxtRef().scale(0);
  *  yield* all(
  *    contentRecttRef().opacity(0.3, 0.3),
@@ -39,7 +38,7 @@ export interface DataRect2Props {
  * @returns
  */
 export function DataRect2({
-  key = "data_rect_2",
+  key,
   ref,
   x = 0,
   y = 0,
@@ -47,7 +46,7 @@ export function DataRect2({
   height = 300,
   radius = 30,
   fill = "#172B45",
-  stroke = BLUE,
+  stroke = COLORS.blue,
   lineWidth = 5,
   shadowColor,
   shadowBlur,
@@ -82,7 +81,7 @@ export function DataRect2({
       <Txt
         ref={invalidTxtRef}
         text={invalidShowTxt}
-        fill={MUTED}
+        fill={COLORS.muted}
         fontFamily={"JetBrains Mono, monospace"}
         fontWeight={800}
         fontSize={60}

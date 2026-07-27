@@ -15,20 +15,20 @@
     },
     {
       "name": "scene3_key_moves",
-      "targetTime": 1.5235392867707918
+      "targetTime": 1.1
     },
     {
       "name": "scene3_new_owner",
-      "targetTime": 2.5235392867707915
+      "targetTime": 2.1
     },
     {
       "name": "scene3_xiaoming_tries",
-      "targetTime": 6.669338145535448
+      "targetTime": 2.3000000000000003
     },
     {
       "name": "scene3_end",
-      "targetTime": 10.06246960715756
+      "targetTime": 3.5000000000000004
     }
   ],
-  "seed": 167433
+  "seed": 4181470713
 }

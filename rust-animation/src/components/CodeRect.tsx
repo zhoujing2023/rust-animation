@@ -1,18 +1,19 @@
 import { Code, CodeProps, Rect } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
 import { CodeLayout } from "./CodeLayout";
+import {COLORS} from "../constants";
 
-const PANEL = "#151C31";
+
 
 export interface CodeRectProps {
   // Rect 组件
   key?: string;
   rectRef?: ReferenceReceiver<Rect>;
-  rectWidth?: number;
-  rectHeight?: number;
-  rectPositionX?: number;
-  rectPositionY?: number;
-  rectOpacity?: number;
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
+  opacity?: number;
   // Code 组件
   code: CodeProps["code"];
   codeRef?: ReferenceReceiver<Code>;
@@ -26,13 +27,13 @@ export interface CodeRectProps {
  * @returns Rect 组件
  */
 export function CodeRect({
-  key = "code_rect",
+  key,
   rectRef,
-  rectWidth = 950,
-  rectHeight = 680,
-  rectPositionX = 0,
-  rectPositionY = 0,
-  rectOpacity = 0,
+  width = 950,
+  height = 680,
+  x = 0,
+  y = 0,
+  opacity = 0,
   code,
   codeRef,
   filename,
@@ -43,18 +44,18 @@ export function CodeRect({
       key={key}
       ref={rectRef}
       layout
-      x={rectPositionX}
-      y={rectPositionY}
-      width={rectWidth}
-      height={rectHeight}
+      x={x}
+      y={y}
+      width={width}
+      height={height}
       radius={34}
-      fill={PANEL}
+      fill={COLORS.panel}
       stroke={"#293451"}
       lineWidth={3}
       shadowColor={"#00000066"}
       shadowBlur={35}
       padding={48}
-      opacity={rectOpacity}
+      opacity={opacity}
     >
       <CodeLayout
         code={code}

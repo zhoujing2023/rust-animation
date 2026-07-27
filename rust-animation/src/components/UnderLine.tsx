@@ -1,7 +1,6 @@
 import { Line } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-
-const RED = "#FF5C68";
+import { COLORS } from "../constants";
 
 const START_X = -290;
 const STEP_X = 30;
@@ -24,7 +23,7 @@ function generate(length: number): [number, number][] {
 }
 
 
-export interface UnderlineLineProps {
+export interface UnderLineProps {
   key?: string;
   ref?: ReferenceReceiver<Line>;
   x?: number;
@@ -37,13 +36,13 @@ export interface UnderlineLineProps {
  * @param 参数
  * @returns 
  */
-export function UnderlineLine({
-  key = "underline_line",
+export function UnderLine({
+  key,
   ref,
   x = 0,
   y = 0,
   length = 11,
-}: UnderlineLineProps) {
+}: UnderLineProps) {
   return (
     <Line
       key={key}
@@ -51,7 +50,7 @@ export function UnderlineLine({
       points={generate(length)}
       x={x}
       y={y}
-      stroke={RED}
+      stroke={COLORS.red}
       lineWidth={6}
       lineCap={"round"}
       end={0}
