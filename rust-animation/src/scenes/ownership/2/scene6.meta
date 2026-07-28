@@ -1,0 +1,30 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene6_immutable_summary",
+      "targetTime": 0.8829708366174609
+    },
+    {
+      "name": "scene6_shared_summary",
+      "targetTime": 2.882970836617461
+    },
+    {
+      "name": "scene6_mutable_summary",
+      "targetTime": 5.455890948660034
+    },
+    {
+      "name": "scene6_lifetime_summary",
+      "targetTime": 10.296275089320968
+    },
+    {
+      "name": "scene6_final_rule",
+      "targetTime": 21.68308044300929
+    },
+    {
+      "name": "scene6_end",
+      "targetTime": 28.576634385316293
+    }
+  ],
+  "seed": 698154471
+}

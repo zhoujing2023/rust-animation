@@ -14,17 +14,16 @@ import {
   createRef,
   easeInOutCubic,
   easeOutBack,
-  waitFor,
-  waitUntil,
+  waitUntil
 } from "@motion-canvas/core";
 import { CodeRect } from "../../../components/CodeRect";
 import { DataRect2 } from "../../../components/DataRect2";
 import { DottedLine } from "../../../components/DottedLine";
+import { ErrorLayout } from "../../../components/ErrorLayout";
 import { ErrorMsgRect } from "../../../components/ErrorMsgRect";
 import { SolidLine } from "../../../components/SolidLine";
 import { UnderLine } from "../../../components/UnderLine";
 import { COLORS } from "../../../constants";
-import { ErrorLayout } from "../../../components/ErrorLayout";
 
 const SOURCE = `let mut document = String::from("版本 A");
 

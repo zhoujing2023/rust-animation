@@ -21,7 +21,6 @@ const TEXT = "#E8ECF6";
 const MUTED = "#94A0BA";
 const BLUE = "#55A7FF";
 const RED = "#FF5C68";
-const YELLOW = "#FFD447";
 const GREEN = "#54D98C";
 
 const moveCode = `let xiaoming_key = String::from("电动车钥匙");

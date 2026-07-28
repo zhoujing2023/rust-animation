@@ -9,23 +9,19 @@ import {
 } from "@motion-canvas/2d";
 import {
   all,
-  chain,
   createRef,
-  createSignal,
   easeInOutCubic,
   easeOutBack,
   waitFor,
-  waitUntil,
+  waitUntil
 } from "@motion-canvas/core";
 import { CodeRect } from "../../../components/CodeRect";
 import { DataRect2 } from "../../../components/DataRect2";
-import { KeyLayout } from "../../../components/KeyLayout";
-import { SolidLine } from "../../../components/SolidLine";
-import { UnderLine } from "../../../components/UnderLine";
-import { COLORS } from "../../../constants";
-import { ForbiddenLayout } from "../../../components/ForbiddenLayout";
 import { DottedLine } from "../../../components/DottedLine";
 import { ErrorMsgRect } from "../../../components/ErrorMsgRect";
+import { ForbiddenLayout } from "../../../components/ForbiddenLayout";
+import { UnderLine } from "../../../components/UnderLine";
+import { COLORS } from "../../../constants";
 
 const SOURCE = `let mut score = 10;
 

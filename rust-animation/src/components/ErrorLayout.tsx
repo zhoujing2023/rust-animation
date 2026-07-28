@@ -11,6 +11,7 @@ export interface ErrorLayoutProps {
   opacity?: number;
   scale?: number;
   fontSize?: number;
+  fontColor?: string;
 }
 
 /**
@@ -27,13 +28,14 @@ export function ErrorLayout({
   opacity = 0,
   scale = 1,
   fontSize = 32,
+  fontColor = COLORS.bg,
 }: ErrorLayoutProps) {
   return (
     <Layout key={key} ref={ref} x={x} y={y} opacity={opacity} scale={scale}>
       <Circle size={size} fill={COLORS.red} />
       <Txt
         text={"×"}
-        fill={COLORS.bg}
+        fill={fontColor}
         fontWeight={900}
         fontSize={fontSize}
         fontFamily={"JetBrains Mono, monospace"}

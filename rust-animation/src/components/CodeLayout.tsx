@@ -2,30 +2,14 @@ import {
   Code,
   CodeProps,
   Layout,
-  LezerHighlighter,
   Rect,
-  Txt,
+  Txt
 } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
-import { HighlightStyle } from "@codemirror/language";
-import { parser } from "@lezer/rust";
-import { tags } from "@lezer/highlight";
-import {COLORS} from "../constants";
+import { COLORS } from "../constants";
+import { RustCode } from "./RustCode";
 
 
-const rustHighlighter = new LezerHighlighter(
-  parser,
-  HighlightStyle.define([
-    { tag: tags.keyword, color: "#C792EA" },
-    { tag: tags.function(tags.variableName), color: "#82AAFF" },
-    { tag: tags.macroName, color: "#89DDFF" },
-    { tag: tags.string, color: "#C3E88D" },
-    { tag: tags.number, color: "#F78C6C" },
-    { tag: tags.typeName, color: "#FFCB6B" },
-    { tag: tags.variableName, color:COLORS.text  },
-    { tag: tags.comment, color: "#697098", fontStyle: "italic" },
-  ]),
-);
 
 export interface CodeLayoutProps {
   key?: string;
@@ -69,14 +53,9 @@ export function CodeLayout({
         />
       </Layout>
       
-      <Code
+      <RustCode
         ref={codeRef}
-        highlighter={rustHighlighter}
         code={code}
-        fontFamily={"JetBrains Mono, monospace"}
-        fontSize={32}
-        lineHeight={58}
-        fill={COLORS.text}
         selection={selection}
       />
     </Layout>

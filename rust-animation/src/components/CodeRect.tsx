@@ -1,9 +1,7 @@
 import { Code, CodeProps, Rect } from "@motion-canvas/2d";
 import { ReferenceReceiver } from "@motion-canvas/core";
 import { CodeLayout } from "./CodeLayout";
-import {COLORS} from "../constants";
-
-
+import { COLORS } from "../constants";
 
 export interface CodeRectProps {
   // Rect 组件
@@ -14,11 +12,13 @@ export interface CodeRectProps {
   x?: number;
   y?: number;
   opacity?: number;
+  offsetY?: number;
   // Code 组件
   code: CodeProps["code"];
   codeRef?: ReferenceReceiver<Code>;
   filename?: string;
   selection?: CodeProps["selection"];
+  background?: any;
 }
 
 /**
@@ -34,10 +34,12 @@ export function CodeRect({
   x = 0,
   y = 0,
   opacity = 0,
+  offsetY,
   code,
   codeRef,
   filename,
   selection,
+  background,
 }: CodeRectProps) {
   return (
     <Rect
@@ -56,7 +58,9 @@ export function CodeRect({
       shadowBlur={35}
       padding={48}
       opacity={opacity}
+      offsetY={offsetY}
     >
+      {background}
       <CodeLayout
         code={code}
         codeRef={codeRef}

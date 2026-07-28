@@ -18,7 +18,6 @@ import { DottedLine } from "../../../components/DottedLine";
 const BG = "#0B1020";
 const PANEL = "#151C31";
 const TEXT = "#E8ECF6";
-const MUTED = "#94A0BA";
 const BLUE = "#55A7FF";
 const RED = "#FF5C68";
 const YELLOW = "#FFD447";

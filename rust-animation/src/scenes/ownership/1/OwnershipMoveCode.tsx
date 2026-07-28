@@ -1,3 +1,6 @@
+import { HighlightStyle } from "@codemirror/language";
+import { tags } from "@lezer/highlight";
+import { parser } from "@lezer/rust";
 import {
   Circle,
   Code,
@@ -13,12 +16,8 @@ import {
   all,
   createRef,
   easeOutBack,
-  waitFor,
-  waitUntil,
+  waitUntil
 } from "@motion-canvas/core";
-import { HighlightStyle } from "@codemirror/language";
-import { tags } from "@lezer/highlight";
-import { parser } from "@lezer/rust";
 import { DataRect1 } from "../../../components/DataRect1";
 import { DataRect2 } from "../../../components/DataRect2";
 import { TitleLayout } from "../../../components/TitleLayout";

@@ -10,15 +10,14 @@ import {
 import {
   all,
   createRef,
-  easeInOutCubic,
   easeOutBack,
-  waitUntil,
+  waitUntil
 } from "@motion-canvas/core";
 import { CodeRect } from "../../../components/CodeRect";
 import { DataRect2 } from "../../../components/DataRect2";
 import { DottedLine } from "../../../components/DottedLine";
-import { COLORS } from "../../../constants";
 import { SolidLine } from "../../../components/SolidLine";
+import { COLORS } from "../../../constants";
 
 const SOURCE = `let document = String::from("hello");
 

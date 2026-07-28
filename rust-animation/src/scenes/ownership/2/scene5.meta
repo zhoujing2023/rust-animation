@@ -1,0 +1,50 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene5_same_scope",
+      "targetTime": 8.155549088434201
+    },
+    {
+      "name": "scene5_reader_last_use",
+      "targetTime": 10.133021324264247
+    },
+    {
+      "name": "scene5_reader_annotation_scope",
+      "targetTime": 10.533021324264247
+    },
+    {
+      "name": "scene5_editor_begins",
+      "targetTime": 16.64862651611598
+    },
+    {
+      "name": "scene5_editor_annotation_scope",
+      "targetTime": 17.048626516115977
+    },
+    {
+      "name": "scene5_reader_scope_highlight",
+      "targetTime": 19.859012528243667
+    },
+    {
+      "name": "scene5_no_overlap",
+      "targetTime": 21.0664288699074
+    },
+    {
+      "name": "scene5_overlap",
+      "targetTime": 23.901016785125645
+    },
+    {
+      "name": "scene5_overlap_warn",
+      "targetTime": 25.411016785125646
+    },
+    {
+      "name": "scene5_nll",
+      "targetTime": 30.436145643514397
+    },
+    {
+      "name": "scene5_end",
+      "targetTime": 38.7534057436456
+    }
+  ],
+  "seed": 698154470
+}

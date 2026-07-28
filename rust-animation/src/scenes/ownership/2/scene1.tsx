@@ -15,13 +15,12 @@ import {
   easeOutBack,
   waitUntil,
 } from "@motion-canvas/core";
+import FerrisEditorPng from "../../../../images/FerrisEditor.png";
+import FerrisReaderPng from "../../../../images/FerrisReader.png";
 import { CodeRect } from "../../../components/CodeRect";
 import { DataRect2 } from "../../../components/DataRect2";
 import { DottedLine } from "../../../components/DottedLine";
-import { SolidLine } from "../../../components/SolidLine";
 import { COLORS } from "../../../constants";
-import FerrisReaderPng from "../../../../images/FerrisReader.png";
-import FerrisEditorPng from "../../../../images/FerrisEditor.png";
 
 const SOURCE = `let mut text = String::from("hello");
 
@@ -245,7 +244,7 @@ export default makeScene2D(function* (view) {
           <Img src={FerrisReaderPng} scale={0.5}></Img>
           <Layout layout={false}>
             <Txt
-              text={"不可变引用是读者"}
+              text={"不可变引 = 是读者"}
               fill={COLORS.text}
               fontWeight={800}
               fontSize={36}
@@ -263,7 +262,7 @@ export default makeScene2D(function* (view) {
           <Img src={FerrisEditorPng} scale={0.5}></Img>
           <Layout layout={false}>
             <Txt
-              text={"可变引用是编辑者"}
+              text={"可变引用 = 编辑者"}
               fill={COLORS.text}
               fontWeight={800}
               fontSize={36}

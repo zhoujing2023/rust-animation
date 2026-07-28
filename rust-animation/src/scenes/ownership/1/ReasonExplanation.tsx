@@ -1,3 +1,6 @@
+import { HighlightStyle } from "@codemirror/language";
+import { tags } from "@lezer/highlight";
+import { parser } from "@lezer/rust";
 import {
   Circle,
   Code,
@@ -9,16 +12,12 @@ import {
   lines,
   makeScene2D,
 } from "@motion-canvas/2d";
-import { HighlightStyle } from "@codemirror/language";
-import { tags } from "@lezer/highlight";
-import { parser } from "@lezer/rust";
 import {
   all,
   createRef,
   easeInOutCubic,
   easeOutBack,
-  waitFor,
-  waitUntil,
+  waitUntil
 } from "@motion-canvas/core";
 
 const BG = "#0B1020";
