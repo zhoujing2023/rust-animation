@@ -8,6 +8,7 @@ export default defineConfig({
       project:[
         "./src/ownership-1.ts",
         "./src/ownership-2.ts",
+        "./src/dangling-pointer.ts"
       ]
     }),
     ffmpeg(),

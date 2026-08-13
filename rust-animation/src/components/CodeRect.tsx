@@ -19,6 +19,8 @@ export interface CodeRectProps {
   filename?: string;
   selection?: CodeProps["selection"];
   background?: any;
+  shadowBlur?: number;
+  shadowColor?: string;
 }
 
 /**
@@ -40,6 +42,8 @@ export function CodeRect({
   filename,
   selection,
   background,
+  shadowBlur = 35,
+  shadowColor = "#00000066",
 }: CodeRectProps) {
   return (
     <Rect
@@ -54,8 +58,8 @@ export function CodeRect({
       fill={COLORS.panel}
       stroke={"#293451"}
       lineWidth={3}
-      shadowColor={"#00000066"}
-      shadowBlur={35}
+      shadowColor={shadowColor}
+      shadowBlur={shadowBlur}
       padding={48}
       opacity={opacity}
       offsetY={offsetY}

@@ -1,0 +1,38 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "scene1_show_func_code_ends",
+      "targetTime": 0.5
+    },
+    {
+      "name": "scene1_func_release",
+      "targetTime": 4.462227502039993
+    },
+    {
+      "name": "scene1_camera_reset",
+      "targetTime": 6.907681941759789
+    },
+    {
+      "name": "scene1_func_call",
+      "targetTime": 8.233145055792484
+    },
+    {
+      "name": "scene1_func_return",
+      "targetTime": 9.350604843538743
+    },
+    {
+      "name": "scene1_compile_rejected",
+      "targetTime": 14.545857379697242
+    },
+    {
+      "name": "scene1_lifetime_rule",
+      "targetTime": 17.6152090905847
+    },
+    {
+      "name": "scene1_end",
+      "targetTime": 20.605113800177307
+    }
+  ],
+  "seed": 26957492
+}
